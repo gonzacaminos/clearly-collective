@@ -25,14 +25,15 @@ module.exports = {
         footer: "linear-gradient(94.61deg, #0BC6E3 20.96%, #8600C5 86.91%)",
       },
       colors: {
-        Primary: {
+        primary: {
           200: "#B4B4AA",
           400: "#686855",
           500: "#43432A",
+          550: "#CDAD84",
           600: "#353521",
           700: "#1D1D00",
         },
-        Secondary: {
+        secondary: {
           50: "#FBF9F6",
           100: "#F9F5F0",
           200: "#F4EDE4",
@@ -43,7 +44,7 @@ module.exports = {
           1000: "#CEAF87",
           550: "#E3D2BC",
         },
-        Neutral: {
+        neutral: {
           100: "#1A1A1A",
           200: "#333333",
           300: "#444444",
@@ -54,6 +55,17 @@ module.exports = {
       fontFamily: {
         heading: "var(--font-heading-family)",
         body: "var(--font-body-family)",
+      },
+      fontSize: {
+        "display-lg": "64px",
+        "display-md": "56px",
+        "display-sm": "40px",
+        "display-xs": "24px",
+        "text-xl": "40px",
+        "text-lg": "24px",
+        "text-md": "20px",
+        "text-sm": "14px",
+        "text-xs": "12px",
       },
       spacing: {
         "40vh": "40vh",
@@ -76,4 +88,5 @@ module.exports = {
     path.resolve(__dirname, "../shopify/**/*.liquid"),
     path.resolve(__dirname, "../pages/*.html"),
   ],
+  prefix: "tw-",
 };
