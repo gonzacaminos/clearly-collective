@@ -116,6 +116,12 @@
         "info": "t:settings_schema.typography.settings.type_header_font.info"
       },
       {
+        "type": "text",
+        "id": "type_header_font_override",
+        "label": "Font override",
+        "info": "Case sensitive, if empty the font picked above will be used."
+      },
+      {
         "type": "range",
         "id": "heading_scale",
         "min": 100,
@@ -135,6 +141,12 @@
         "default": "assistant_n4",
         "label": "t:settings_schema.typography.settings.type_body_font.label",
         "info": "t:settings_schema.typography.settings.type_body_font.info"
+      },
+      {
+        "type": "text",
+        "id": "type_body_font_override",
+        "label": "Font override",
+        "info": "Case sensitive, if empty the font picked above will be used."
       },
       {
         "type": "range",
