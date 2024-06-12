@@ -8,11 +8,11 @@
 
 @layer components {
   .c-container {
-    @apply w-full max-w-[1280px] mx-auto;
+    @apply tw-w-full tw-max-w-[1280px] tw-mx-auto;
   }
 
   .c-container-padded {
     @extend .c-container;
-    @apply px-8 xl:px-0;
+    @apply tw-px-8 2xl:tw-px-0;
   }
 }
