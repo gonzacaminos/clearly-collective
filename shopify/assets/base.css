@@ -1214,10 +1214,11 @@ button.shopify-payment-button__button--unbranded {
   justify-content: center;
   align-items: center;
   border: 0;
-  padding: 0 3rem;
+  padding: 1.2rem 3.2rem;
   cursor: pointer;
   font: inherit;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
   text-decoration: none;
   color: rgb(var(--color-button-text));
   transition: box-shadow var(--duration-short) ease;
@@ -2481,8 +2482,7 @@ input[type="checkbox"] {
     justify-self: start;
   }
 
-
-  .header--mobile-left .header__heading-logo{
+  .header--mobile-left .header__heading-logo {
     max-height: 40px;
   }
 
@@ -2537,15 +2537,17 @@ input[type="checkbox"] {
   justify-content: center;
 }
 
-.header__icon, .header__search {
+.header__icon,
+.header__search {
   width: var(--header-icon-size);
   height: var(--header-icon-size);
   border-inline: 1px solid rgb(var(--color-border-general));
 }
 
 @media screen and (max-width: 989px) {
-  .header__icon, .header__search {
-  --header-icon-size: 56px;
+  .header__icon,
+  .header__search {
+    --header-icon-size: 56px;
   }
 }
 
