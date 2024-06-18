@@ -18,7 +18,7 @@
     "type_body_font": "assistant_n4",
     "type_body_font_override": "Satoshi, sans-serif",
     "body_scale": 100,
-    "page_width": 1200,
+    "page_width": 1220,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
@@ -145,61 +145,71 @@
       "scheme-1": {
         "settings": {
           "background": "#ffffff",
+          "background_alternative": "#f9f5f0",
           "background_gradient": "",
           "text": "#686855",
           "button": "#121212",
           "button_label": "#ffffff",
           "secondary_button_label": "#121212",
           "shadow": "#121212",
-          "border": "#efe5d9"
+          "border": "#efe5d9",
+          "accent": "#43432a"
         }
       },
       "scheme-2": {
         "settings": {
           "background": "#f3f3f3",
+          "background_alternative": "#000000",
           "background_gradient": "",
           "text": "#121212",
           "button": "#121212",
           "button_label": "#f3f3f3",
           "secondary_button_label": "#121212",
           "shadow": "#121212",
-          "border": "#121212"
+          "border": "#121212",
+          "accent": "#121212"
         }
       },
       "scheme-3": {
         "settings": {
           "background": "#242833",
+          "background_alternative": "#000000",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
           "button_label": "#000000",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212",
-          "border": "#121212"
+          "border": "#121212",
+          "accent": "#121212"
         }
       },
       "scheme-4": {
         "settings": {
           "background": "#121212",
+          "background_alternative": "#000000",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
           "button_label": "#121212",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212",
-          "border": "#121212"
+          "border": "#121212",
+          "accent": "#121212"
         }
       },
       "scheme-5": {
         "settings": {
           "background": "#43432a",
+          "background_alternative": "#353521",
           "background_gradient": "",
           "text": "#b4b4aa",
           "button": "#ffffff",
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212",
-          "border": "#686855"
+          "border": "#686855",
+          "accent": "#ceaf87"
         }
       }
     }
@@ -268,7 +278,7 @@
       "heading_scale": 100,
       "type_body_font": "assistant_n4",
       "body_scale": 100,
-      "page_width": 1200,
+      "page_width": 1280,
       "spacing_sections": 0,
       "spacing_grid_horizontal": 8,
       "spacing_grid_vertical": 8,
