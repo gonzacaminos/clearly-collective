@@ -16,6 +16,12 @@
         "label": "t:settings_schema.logo.settings.logo_image.label"
       },
       {
+        "type": "image_picker",
+        "id": "logo_alternative",
+        "label": "Alternative Logo",
+        "info": "Used on regular pages"
+      },
+      {
         "type": "range",
         "id": "logo_width",
         "min": 50,
@@ -80,6 +86,12 @@
             "type": "color",
             "id": "shadow",
             "label": "t:settings_schema.colors.settings.shadow.label",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "border",
+            "label": "Border color",
             "default": "#121212"
           }
         ],
