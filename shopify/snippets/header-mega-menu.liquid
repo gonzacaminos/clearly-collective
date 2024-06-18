@@ -72,12 +72,7 @@
                       {% for mega_image in mega_images %}
                         {% assign label = mega_image.settings.menu_label | downcase %}
                         {% if label == menu_label %}
-                          <a href="{{mega_image.settings.link}}" class="tw-block tw-relative tw-group tw-overflow-hidden tw-transition-all">
-                            {{ mega_image.settings.image | image_url: width: 420 | image_tag: class: 'group-hover:tw-blur-sm group-hover:tw-scale-125 tw-duration-500' }}
-                            <span class="tw-font-heading tw-absolute tw-bottom-10 tw-left-10 tw-uppercase tw-text-display-xs tw-text-white tw-opacity-0 group-hover:tw-opacity-100 tw-duration-500 ">{{ mega_image.settings.title }}</span>
-                            {% render 'icon-right-arrow'
-                              , class: 'tw-absolute tw-top-10 tw-right-10 tw-opacity-0 group-hover:tw-opacity-100 group-hover:-tw-rotate-45  tw-duration-500 ' %}
-                          </a>
+                          {% render 'mega-menu-image', mega_image: mega_image %}
                         {% endif %}
                       {% endfor %}
 

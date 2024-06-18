@@ -75,11 +75,11 @@ module.exports = {
         "80vh": "80vh",
         "90vh": "90vh",
         "100vh": "100vh",
+        "6.5": "1.6rem"
       },
     },
     container: {
       center: true,
-      margin: "4rem",
     },
   },
   plugins: [],
