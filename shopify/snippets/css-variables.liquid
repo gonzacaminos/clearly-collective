@@ -103,6 +103,10 @@
           endif
 %}
 
+    --color-background-alternative: {{ scheme.settings.background_alternative.red }}, 
+        {{ scheme.settings.background_alternative.green }}, 
+        {{ scheme.settings.background_alternative.blue }};
+
     --color-foreground: {{ scheme.settings.text.red }}, 
     {{ scheme.settings.text.green }}, 
     {{ scheme.settings.text.blue }};
@@ -115,6 +119,9 @@
     --color-border-general: {{ scheme.settings.border.red }}, 
     {{ scheme.settings.border.green }}, 
     {{ scheme.settings.border.blue }};
+    --color-accent: {{ scheme.settings.accent.red }}, 
+    {{ scheme.settings.accent.green }}, 
+    {{ scheme.settings.accent.blue }};
     --color-button: {{ scheme.settings.button.red }}, 
     {{ scheme.settings.button.green }}, 
     {{ scheme.settings.button.blue }};
