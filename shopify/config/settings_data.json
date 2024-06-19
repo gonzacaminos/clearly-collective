@@ -11,8 +11,8 @@
     "body_scale": 100,
     "page_width": 1220,
     "spacing_sections": 0,
-    "spacing_grid_horizontal": 8,
-    "spacing_grid_vertical": 8,
+    "spacing_grid_horizontal": 16,
+    "spacing_grid_vertical": 16,
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
@@ -135,7 +135,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#f7f5f1",
           "background_alternative": "#f9f5f0",
           "background_gradient": "",
           "text": "#686855",
