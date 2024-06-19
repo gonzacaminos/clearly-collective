@@ -3,6 +3,7 @@
  */
 import "./scss/main.scss";
 import Alpine from "alpinejs";
+import Splide from '@splidejs/splide';
 
 window.Alpine = Alpine;
 
@@ -31,6 +32,30 @@ if (sort_by) {
     location.search = new URLSearchParams(Shopify.queryParams).toString();
   });
 }
+
+const carousels = document.querySelectorAll( '.splide' );
+
+carousels.forEach(carousel => {
+  const data = carousel.dataset;
+  new Splide( carousel, {
+    perPage: data?.perPage,
+    padding: { left: parseInt(data?.paddingLeft || 0) , right: parseInt(data?.paddingRight || 0) },
+    gap: data?.gap || '24px',
+    breakpoints: {
+      480: {
+        perPage: 1,
+      },
+      640: {
+        perPage: 1,
+        padding: 10
+      },
+      980: {
+        perPage: 2
+      }
+    }
+  }).mount();
+});
+
 
 // new Ajaxinate({
 //   container: '#AjaxinateContainer',

@@ -33,6 +33,16 @@
       "settings": {
       }
     },
+    "brand_partnerships_x7HB8q": {
+      "type": "brand-partnerships",
+      "settings": {
+        "title": "Brand Partnerships",
+        "description": "For connoisseurs of unmatched quality and unparalleled attention to detail, our Black Label service is a testament to the zenith of design sophistication.",
+        "cta_url": "shopify:\/\/pages\/partnerships",
+        "cta_label": "VIEW ALL",
+        "partnerships_data": "homepage-partnerships"
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -133,6 +143,7 @@
   },
   "order": [
     "hero_banner_RnYACY",
+    "brand_partnerships_x7HB8q",
     "rich_text",
     "featured_collection",
     "collage"
