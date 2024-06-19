@@ -12,11 +12,11 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding tw-bg-[#F7F5F1]">
+<div class="section-{{ section.id }}-padding">
   <div class="page-width tw-space-y-3.5">
 
     {% for block in section.blocks %}
-      <a href="{{block.settings.url}}" class="tw-block tw-relative tw-group tw-overflow-hidden tw-transition-all tw-w-full  after:tw-absolute after:tw-inset-0 after:tw-bg-primary-700 after:tw-opacity-60">
+      <a href="{{block.settings.url}}" class="scroll-trigger animate--slide-in tw-block tw-relative tw-group tw-overflow-hidden tw-transition-all tw-w-full  after:tw-absolute after:tw-inset-0 after:tw-bg-primary-700 after:tw-opacity-60">
         {{ block.settings.image | image_url: width: 1280 | image_tag: class: 'group-hover:tw-blur-sm group-hover:tw-scale-110 tw-duration-500 tw-hidden lg:tw-block' }}
 
         {% if block.settings.mobile_image %}
