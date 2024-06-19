@@ -40,7 +40,57 @@
         "description": "For connoisseurs of unmatched quality and unparalleled attention to detail, our Black Label service is a testament to the zenith of design sophistication.",
         "cta_url": "shopify:\/\/pages\/partnerships",
         "cta_label": "VIEW ALL",
-        "partnerships_data": "homepage-partnerships"
+        "partnerships_data": "homepage-partnerships",
+        "padding_top": 64,
+        "padding_bottom": 0
+      }
+    },
+    "image_link_blocks_CLEthL": {
+      "type": "image-link-blocks",
+      "blocks": {
+        "image_FGVtVD": {
+          "type": "image",
+          "settings": {
+            "eyebrow": "The Summers Collection",
+            "title": "Summer is coming",
+            "description": "Wherever you go, take with you the nostalgia of salty summer air and sun-kissed sand... we can already taste the rosé.",
+            "image": "shopify:\/\/shop_images\/Image1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Image-mob1.jpg",
+            "url": "shopify:\/\/collections\/summer-getaways"
+          }
+        },
+        "image_LURJ3b": {
+          "type": "image",
+          "settings": {
+            "eyebrow": "WEDDINGS & EVENTS",
+            "title": "PREDESIGNED & CUSTOM",
+            "description": "Shop our pre-made wedding scarves, or learn more about how to make your own highly customized event inspired scarf.",
+            "image": "shopify:\/\/shop_images\/Image2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Image-mob2.jpg",
+            "url": "shopify:\/\/pages\/custom-requests"
+          }
+        },
+        "image_zHb4bY": {
+          "type": "image",
+          "settings": {
+            "eyebrow": "BRAND PARTNERSHIPS",
+            "title": "BRANDED ART",
+            "description": "Learn how we transform a logo into a branded design using brand history, aesthetic & values.",
+            "image": "shopify:\/\/shop_images\/Image3.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Image-mob3.jpg",
+            "url": "shopify:\/\/pages\/partnerships"
+          }
+        }
+      },
+      "block_order": [
+        "image_FGVtVD",
+        "image_LURJ3b",
+        "image_zHb4bY"
+      ],
+      "settings": {
+        "title": "Collections",
+        "padding_top": 104,
+        "padding_bottom": 104
       }
     },
     "rich_text": {
@@ -144,6 +194,7 @@
   "order": [
     "hero_banner_RnYACY",
     "brand_partnerships_x7HB8q",
+    "image_link_blocks_CLEthL",
     "rich_text",
     "featured_collection",
     "collage"

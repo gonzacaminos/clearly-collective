@@ -1,0 +1,123 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding tw-bg-[#F7F5F1]">
+  <div class="page-width tw-space-y-3.5">
+
+    {% for block in section.blocks %}
+      <a href="{{block.settings.url}}" class="tw-block tw-relative tw-group tw-overflow-hidden tw-transition-all tw-w-full  after:tw-absolute after:tw-inset-0 after:tw-bg-primary-700 after:tw-opacity-60">
+        {{ block.settings.image | image_url: width: 1280 | image_tag: class: 'group-hover:tw-blur-sm group-hover:tw-scale-110 tw-duration-500 tw-hidden lg:tw-block' }}
+
+        {% if block.settings.mobile_image %}
+          {{ block.settings.mobile_image | image_url: width: 600 | image_tag: class: 'lg:tw-hidden tw-object-cover tw-w-full' }}
+        {% endif %}
+
+        <div class="tw-absolute tw-inset-0 tw-p-10 tw-text-white tw-max-w-5xl tw-flex tw-flex-col tw-z-[1] tw-uppercase">
+          <span class="tw-block tw-mb-auto tw-font-bold tw-text-text-sm">{{ block.settings.eyebrow }}</span>
+          <span class="tw-block tw-mb-3.5	tw-font-heading tw-text-text-lg md:tw-text-display-sm">{{ block.settings.title }}</span>
+          <span>{{ block.settings.description }}</span>
+        </div>
+        {% render 'icon-right-arrow'
+          , class: 'tw-absolute tw-top-10 tw-z-[1] tw-right-10 tw-opacity-0 group-hover:tw-opacity-100 group-hover:-tw-rotate-45  tw-duration-500 tw-hidden lg:tw-block ' %}
+      </a>
+    {% endfor %}
+  </div>
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Image Link Blocks",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "default": "t:sections.collection-list.settings.title.default",
+        "label": "t:sections.collection-list.settings.title.label"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Eyebrow"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "inline_richtext",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          }
+
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Image Link Blocks"
+      }
+    ]
+  }
+{% endschema %}
