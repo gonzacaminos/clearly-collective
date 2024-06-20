@@ -49,23 +49,25 @@
           <p>Error: you need to enter the Partnerships List handle for this section to show.</p>
         {% endif %}
 
-        {% for num in (1..5) %}
-          {%- for partnership in partnerships.value -%}
-            <li
-              id="Slide-{{ section.id }}-{{ forloop.index }}"
-              class="splide__slide  tw-bg-white tw-p-10 tw-text-center tw-border tw-border-secondary-300 hover:tw-bg-primary-500 hover:tw-text-white tw-transition-all tw-group"
-              {{ block.shopify_attributes }}>
-              <a href="{{shop.url}}{{partnership.system.url}}" class="tw-space-y-7">
-                <div class="tw-bg-white tw-w-full">{{ partnership.logo | image_url: height: 172 | image_tag: class: 'tw-mx-auto' }}</div>
+        {%- for partnership in partnerships.value -%}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="splide__slide  tw-bg-white tw-p-10 tw-text-center tw-border tw-border-secondary-300 hover:tw-bg-primary-500 hover:tw-text-white tw-transition-all tw-group"
+            {{ block.shopify_attributes }}>
+            <a href="{{shop.url}}{{partnership.system.url}}" class="tw-space-y-7">
+              {% assign image = partnership.logo %}
+              {% unless image %}
+                {% assign image = images['Fallback_Brand.png'] %}
+              {% endunless %}
+              <div class="tw-bg-white tw-w-full">{{ image | image_url: height: 172 | image_tag: class: 'tw-mx-auto' }}</div>
 
-                <h3 class="tw-text-text-lg tw-text-black group-hover:tw-text-white tw-font-medium tw-font-body">{{ partnership.title }}</h3>
-                <p>
-                  {{ partnership.description | metafield_tag }}
-                </p>
-              </a>
-            </li>
-          {%- endfor -%}
-        {% endfor %}
+              <h3 class="tw-text-text-lg tw-text-black group-hover:tw-text-white tw-font-medium tw-font-body">{{ partnership.title }}</h3>
+              <p>
+                {{ partnership.description | metafield_tag }}
+              </p>
+            </a>
+          </li>
+        {%- endfor -%}
       </ul>
     </div>
     {% if section.settings.cta_label != blank %}
