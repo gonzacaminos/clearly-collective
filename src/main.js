@@ -41,6 +41,7 @@ carousels.forEach(carousel => {
     perPage: data?.perPage,
     padding: { left: parseInt(data?.paddingLeft || 0) , right: parseInt(data?.paddingRight || 0) },
     gap: data?.gap || '24px',
+    pagination: false,
     breakpoints: {
       480: {
         perPage: 1,

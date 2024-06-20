@@ -19,7 +19,6 @@
     data-per-page="4"
     data-padding-left="50"
     data-padding-right="80">
-    {% render 'separator' %}
     <div class="page-width">
       <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-6">
         {{ section.settings.title }}
@@ -72,8 +71,6 @@
     {% if section.settings.cta_label != blank %}
       <a href="{{section.settings.cta_url}}" class="button button--primary tw-block tw-max-w-fit tw-mx-auto tw-uppercase hover:tw-bg-secondary-500 hover:tw-text-primary-700">{{ section.settings.cta_label }}</a>
     {% endif %}
-    {% render 'separator'
-      , class: 'tw-rotate-180' %}
   </div>
 </div>
 

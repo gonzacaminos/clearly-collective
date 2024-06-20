@@ -33,6 +33,14 @@
       "settings": {
       }
     },
+    "separator_pG4DEV": {
+      "type": "separator",
+      "settings": {
+        "orientation": "regular",
+        "padding_top": 64,
+        "padding_bottom": 40
+      }
+    },
     "brand_partnerships_x7HB8q": {
       "type": "brand-partnerships",
       "settings": {
@@ -41,7 +49,15 @@
         "cta_url": "shopify:\/\/pages\/partnerships",
         "cta_label": "VIEW ALL",
         "partnerships_data": "homepage-partnerships",
-        "padding_top": 64,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "separator_XDUdmf": {
+      "type": "separator",
+      "settings": {
+        "orientation": "tw-rotate-180",
+        "padding_top": 40,
         "padding_bottom": 0
       }
     },
@@ -187,14 +203,63 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "separator_YHgbA7": {
+      "type": "separator",
+      "settings": {
+        "orientation": "regular",
+        "padding_top": 104,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_RtGL9A": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "BEST SELLING",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "college-campus-scarves",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "separator_aeEncL": {
+      "type": "separator",
+      "settings": {
+        "orientation": "tw-rotate-180",
+        "padding_top": 40,
+        "padding_bottom": 104
+      }
     }
   },
   "order": [
     "hero_banner_RnYACY",
+    "separator_pG4DEV",
     "brand_partnerships_x7HB8q",
+    "separator_XDUdmf",
     "image_link_blocks_CLEthL",
     "featured_collection",
     "collection_link_blocks_rPainJ",
-    "image_banner_dM74LL"
+    "image_banner_dM74LL",
+    "separator_YHgbA7",
+    "featured_collection_RtGL9A",
+    "separator_aeEncL"
   ]
 }
