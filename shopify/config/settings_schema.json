@@ -105,6 +105,12 @@
             "id": "accent",
             "label": "Accent color",
             "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "accent_alternative",
+            "label": "Accent alternative",
+            "default": "#D8BE9F"
           }
         ],
         "role": {

@@ -9,7 +9,7 @@
     "type_body_font": "assistant_n4",
     "type_body_font_override": "Satoshi, sans-serif",
     "body_scale": 100,
-    "page_width": 1220,
+    "page_width": 1280,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 16,
     "spacing_grid_vertical": 16,
@@ -98,10 +98,10 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-3",
-    "social_facebook_link": "",
-    "social_instagram_link": "",
+    "social_facebook_link": "https:\/\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/theclearlycollective\/?hl=en",
     "social_youtube_link": "",
-    "social_tiktok_link": "",
+    "social_tiktok_link": "https:\/\/www.tiktok.com\/@theclearlycollective?lang=en",
     "social_twitter_link": "",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
@@ -144,7 +144,8 @@
           "secondary_button_label": "#121212",
           "shadow": "#121212",
           "border": "#efe5d9",
-          "accent": "#43432a"
+          "accent": "#43432a",
+          "accent_alternative": "#d8be9f"
         }
       },
       "scheme-2": {
@@ -158,7 +159,8 @@
           "secondary_button_label": "#121212",
           "shadow": "#121212",
           "border": "#121212",
-          "accent": "#121212"
+          "accent": "#121212",
+          "accent_alternative": "#d8be9f"
         }
       },
       "scheme-3": {
@@ -172,7 +174,8 @@
           "secondary_button_label": "#ffffff",
           "shadow": "#121212",
           "border": "#121212",
-          "accent": "#121212"
+          "accent": "#121212",
+          "accent_alternative": "#d8be9f"
         }
       },
       "scheme-4": {
@@ -186,7 +189,8 @@
           "secondary_button_label": "#ffffff",
           "shadow": "#121212",
           "border": "#121212",
-          "accent": "#121212"
+          "accent": "#121212",
+          "accent_alternative": "#d8be9f"
         }
       },
       "scheme-5": {
@@ -200,7 +204,8 @@
           "secondary_button_label": "#ffffff",
           "shadow": "#121212",
           "border": "#686855",
-          "accent": "#ceaf87"
+          "accent": "#ceaf87",
+          "accent_alternative": "#d8be9f"
         }
       }
     }

@@ -60,6 +60,19 @@
               assign footer_grid_class = 'grid--3-col-tablet'
             endif
           -%}
+          <div class="tw-flex tw-items-center tw-pb-10 tw-border-b tw-border-b-primary-400">
+            {% if section.settings.logo %}
+              {{ section.settings.logo |  image_url: width: 125 |  image_tag  }}
+            {% endif %}
+            <div class="tw-ml-auto tw-flex tw-items-center">
+              {% if section.settings.social_text %}
+                <h2 class="footer-block__heading social">{{section.settings.social_text}}</h2>
+              {% endif %}
+              {%- if section.settings.show_social and has_social_icons -%}
+                {%- render 'social-icons', class: 'footer__list-social tw-text-secondary-800' -%}
+              {%- endif -%}
+            </div>
+          </div>
           <div
             class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
@@ -68,7 +81,7 @@
           >
             {%- for block in section.blocks -%}
               <div
-                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu  width--{{block.settings.desktop_width}} cols--{{block.settings.columns}} {% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -338,6 +351,27 @@
           "default": "footer",
           "label": "t:sections.footer.blocks.link_list.settings.menu.label",
           "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        },
+        {
+          "type": "range",
+          "id": "desktop_width",
+          "label": "Desktop width",
+          "info": "Leave empty for auto width",
+          "min": 0,
+          "max": 70,
+          "step": 5,
+          "default": 0,
+          "unit": "%"
+        },
+         {
+          "type": "range",
+          "id": "columns",
+          "label": "Desktop Columns",
+          "min": 1,
+          "max": 3,
+          "step": 1,
+          "default": 1,
+          "unit": "col"
         }
       ]
     },
@@ -424,6 +458,11 @@
   ],
   "settings": [
     {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Image"
+    },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
@@ -467,6 +506,11 @@
       "id": "show_social",
       "default": true,
       "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "text",
+      "id": "social_text",
+      "label": "Social text"
     },
     {
       "type": "header",
