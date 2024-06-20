@@ -1,0 +1,154 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding collection-link-blocks">
+  <div class="page-width tw-grid lg:tw-grid-cols-2 tw-items-center tw-gap-16">
+
+    <div>
+
+      {% if section.settings.mobile_image %}
+        {{ section.settings.mobile_image | image_url: width: 600 | image_tag: class: 'tw-block lg:tw-hidden tw-mb-12' }}
+      {% endif %}
+
+      {% if section.settings.title %}
+        <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-16">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+
+
+      <div class="interaction-container">
+        {% for block in section.blocks %}
+          <a
+            href="{{block.settings.collection.url}}"
+            class="tw-group hover:tw-bg-primary-400 tw-text-primary-500 hover:tw-text-white scroll-trigger animate--slide-in tw-flex tw-items-center tw-p-[32px] tw-border-b tw-border-b-neutral-500"
+            data-index="{{forloop.index}}">
+
+            <p class="tw-block tw-text-text-md">
+              {% if block.settings.title %}
+                {{ block.settings.title }}
+              {% else %}
+                {{ block.settings.collection.title }}
+              {% endif %}
+            </p>
+            {% render 'icon-right-arrow'
+              , class: 'tw-absolute tw-z-[1] tw-right-10 -tw-rotate-45 lg:tw-rotate-0 lg:tw-opacity-0 group-hover:tw-opacity-100 group-hover:-tw-rotate-45  tw-duration-300' %}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="splide splide-slider-vertical tw-hidden lg:tw-block">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li id="Slide-{{ section.id }}-0" class="splide__slide">
+            {{ section.settings.image | image_url: width: 600 | image_tag: class: 'tw-w-full tw-object-cover' }}
+          </li>
+          {% for block in section.blocks %}
+            <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="splide__slide">
+              {{ block.settings.image | image_url: width: 600 | image_tag: class: 'tw-w-full tw-object-cover' }}
+            </li>
+          {% endfor %}
+        </ul>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collection Link Blocks",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "default": "t:sections.collection-list.settings.title.default",
+        "label": "t:sections.collection-list.settings.title.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+
+    ],
+    "blocks": [
+      {
+        "type": "link",
+        "name": "Link",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "info": "If empty Collection name will be used"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Collection Link Blocks"
+      }
+    ]
+  }
+{% endschema %}

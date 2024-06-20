@@ -33,7 +33,7 @@ if (sort_by) {
   });
 }
 
-const carousels = document.querySelectorAll( '.splide' );
+const carousels = document.querySelectorAll( '.splide-slider' );
 
 carousels.forEach(carousel => {
   const data = carousel.dataset;
@@ -56,6 +56,37 @@ carousels.forEach(carousel => {
   }).mount();
 });
 
+
+
+const vertical_carousel = document.querySelector( '.collection-link-blocks .splide-slider-vertical' );
+
+if(vertical_carousel){
+  const collection_link_block = new Splide( vertical_carousel, {
+    perPage: 1,
+    arrows: false,
+    direction: 'ttb',
+    heightRatio: 1,
+    speed: 600
+  }).mount();
+  
+  const collection_links = document.querySelectorAll('.collection-link-blocks a.tw-group');
+  
+  collection_links.forEach(collection_link => {
+    collection_link.addEventListener("mouseenter", (event) => {
+      const index = parseInt(event.currentTarget.dataset?.index);
+      console.log(index)
+      collection_link_block.go(index)
+    });
+  });
+
+  const interaction_container = document.querySelector( '.collection-link-blocks .interaction-container' );
+
+  if(interaction_container){
+    interaction_container.addEventListener("mouseleave", (event) => {
+      collection_link_block.go(0)
+    });
+  }
+}
 
 // new Ajaxinate({
 //   container: '#AjaxinateContainer',
