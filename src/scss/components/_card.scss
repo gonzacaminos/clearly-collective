@@ -1,0 +1,12 @@
+.card {
+  .card__content {
+    @apply tw-text-primary-500;
+    .card-information {
+      margin-top: 1.6rem;
+
+      .price {
+        @apply tw-text-text-xs tw-font-bold tw-text-primary-500;
+      }
+    }
+  }
+}

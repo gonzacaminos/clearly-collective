@@ -5,7 +5,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import '@splidejs/splide/css/core';
+@import "@splidejs/splide/css/core";
 
 @layer components {
   .c-container {
@@ -17,3 +17,8 @@
     @apply tw-px-8 2xl:tw-px-0;
   }
 }
+
+@import "./components/base";
+@import "./components/header";
+@import "./components/button";
+@import "./components/card";

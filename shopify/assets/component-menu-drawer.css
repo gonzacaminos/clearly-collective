@@ -27,7 +27,7 @@ menu-drawer > details[open] > summary::before {
 
 .menu-drawer {
   position: absolute;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   visibility: hidden;
   z-index: 3;
   left: 0;
@@ -40,7 +40,6 @@ menu-drawer > details[open] > summary::before {
     var(--drawer-shadow-horizontal-offset) var(--drawer-shadow-vertical-offset) var(--drawer-shadow-blur-radius)
       rgba(var(--color-shadow), var(--drawer-shadow-opacity))
   );
-  border-top: 1px solid rgb(var(--color-border-general));
 }
 
 .js .menu-drawer {
@@ -100,9 +99,9 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__menu-item {
-  padding: 16px;
+  padding: 1.1rem 3rem;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 .menu-drawer summary.menu-drawer__menu-item {
@@ -111,7 +110,9 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__menu-item--active,
 .menu-drawer__menu-item:focus,
-.menu-drawer__menu-item:hover {
+.menu-drawer__close-button:focus,
+.menu-drawer__menu-item:hover,
+.menu-drawer__close-button:hover {
   color: rgb(var(--color-foreground));
   background-color: rgba(var(--color-foreground), 0.04);
 }
@@ -148,23 +149,22 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__close-button {
-  margin-bottom: 1.6rem;
-  padding: 1.8rem 2.6rem 1.8rem 1.6rem;
+  margin-top: 1.5rem;
+  padding: 1.2rem 2.6rem 1.2rem 3rem;
   text-decoration: none;
   display: flex;
   align-items: center;
   font-size: 1.4rem;
   width: 100%;
+  background-color: transparent;
   font-family: var(--font-body-family);
-  font-weight: bold;
+  font-style: var(--font-body-style);
   text-align: left;
-  border-bottom: 1px solid rgb(var(--color-border-general));
-  background: rgb(var(--color-background-alternative));
 }
 
-.menu-drawer__close-button .icon-chevron-left {
+.menu-drawer__close-button .icon-arrow {
+  transform: rotate(180deg);
   margin-right: 1rem;
-  color: rgb(var(--color-accent));
 }
 
 .menu-drawer__utility-links {

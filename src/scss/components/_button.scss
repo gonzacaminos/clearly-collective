@@ -1,0 +1,22 @@
+.button--secondary,
+.button--tertiary {
+  --color-button: var(--color-secondary-button);
+  --color-button-text: var(--color-secondary-button-text);
+  border: 1px solid rgb(var(--color-secondary-button-text));
+}
+
+.button--secondary:hover,
+.button--tertiary:hover {
+  --color-button: var(--color-secondary-button-text);
+  --color-button-text: var(--color-secondary-button);
+  border: 1px solid rgb(var(--color-secondary-button-text));
+}
+
+.button,
+.shopify-challenge__button,
+.customer button {
+  padding: 1.2rem 3.2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border: auto;
+}
