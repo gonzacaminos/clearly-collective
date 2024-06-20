@@ -88,7 +88,7 @@
   @apply tw-mr-4 lg:tw-mr-0;
 }
 
-.list-menu__item {
+.header .list-menu__item {
   display: flex;
   align-items: center;
   padding: 32px 10px;
@@ -162,4 +162,8 @@ header .mega-menu__content {
   .page-width-desktop {
     padding-inline: 0.5rem;
   }
+}
+
+.header__active-menu-item {
+  text-decoration: none;
 }

@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       screens: {
         mobile: "480px",
+        xl2: "1440px",
         wide: "2150px",
         "xl-wide": "2500px",
       },
@@ -75,9 +76,9 @@ module.exports = {
         "80vh": "80vh",
         "90vh": "90vh",
         "100vh": "100vh",
-        "6.5": "1.6rem",
-        "section": "10.4rem",
-        "section-sm": "6.4rem"
+        6.5: "1.6rem",
+        section: "10.4rem",
+        "section-sm": "6.4rem",
       },
     },
     container: {

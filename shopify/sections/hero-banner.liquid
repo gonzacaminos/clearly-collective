@@ -31,7 +31,7 @@
                   {{ block.settings.image | image_url: height: 600 | image_tag: class: 'tw-aspect-square lg:tw-aspect-auto tw-object-cover' }}
                 </div>
               {% endif %}
-              <div class="tw-py-10">
+              <div class="tw-p-10">
                 {% if block.settings.title != blank %}
                   <h2 class=" tw-text-display-lg tw-text-secondary-800 tw-font-heading tw-uppercase tw-leading-none tw-mb-10">{{ block.settings.title }}</h2>
                 {% endif %}
@@ -59,7 +59,7 @@
 
 
       {%- if section.blocks.size > 1 -%}
-        <div class="lg:tw-absolute tw-left-[-70px] slider-buttons tw-flex lg:tw-flex-col tw-items-center tw-mt-16 lg:tw-mt-0">
+        <div class="lg:tw-absolute tw-left-0 xl2:tw-left-[-70px]  tw-bg-primary-500 slider-buttons tw-flex lg:tw-flex-col tw-items-center tw-mt-16 lg:tw-mt-0">
           <button
             type="button"
             class="slider-button slider-button--prev !tw-hidden"
