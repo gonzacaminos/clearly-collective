@@ -1,12 +1,3 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -31,11 +22,20 @@
             "link": "shopify:\/\/collections\/summer-getaways",
             "title": "SUMMERS"
           }
+        },
+        "columns_QE336t": {
+          "type": "columns",
+          "settings": {
+            "menu_label": "Partnerships",
+            "link": "shopify:\/\/pages\/partnerships",
+            "title": "View All"
+          }
         }
       },
       "block_order": [
         "images_cybxF8",
-        "images_YQcJiT"
+        "images_YQcJiT",
+        "columns_QE336t"
       ],
       "settings": {
         "logo_position": "middle-left",

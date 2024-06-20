@@ -85,7 +85,7 @@
 
 .header__icon--cart {
   position: relative;
-  margin-right: 0;
+  @apply tw-mr-4 lg:tw-mr-0;
 }
 
 .list-menu__item {
@@ -129,8 +129,8 @@ details[open] > .header__menu-item {
 }
 
 header .mega-menu__link {
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
 header .mega-menu__list--condensed .mega-menu__link {
@@ -157,7 +157,8 @@ header .menu-drawer {
   }
 }
 
-.mega-menu__content {
+header .mega-menu__content {
+  padding-block: 0;
   .page-width-desktop {
     padding-inline: 0.5rem;
   }

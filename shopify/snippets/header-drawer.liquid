@@ -26,7 +26,9 @@
               {%- for link in section.settings.menu.links -%}
                 <li>
                   {% assign mega_images = section.blocks | where: 'type', 'images' %}
+                  {% assign mega_columns = section.blocks | where: 'type', 'columns' %}
                   {% assign menu_label = link.title | downcase %}
+
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary id="HeaderDrawer-{{ link.handle }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
@@ -93,16 +95,31 @@
                                 {%- endif -%}
                               </li>
                             {%- endfor -%}
+                            {% for mega_column in mega_columns %}
+                              {% assign label = mega_column.settings.menu_label | downcase %}
+                              {% if label == menu_label and mega_column.settings.title %}
+                                <li>
+                                  <a
+                                    id="HeaderDrawer-{{ mega_column.id }}"
+                                    href="{{ mega_column.settings.link}}"
+                                    class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                    {{ mega_column.settings.title | escape }}
+                                  </a>
+                                </li>
+                              {% endif %}
+                            {% endfor %}
+
                           </ul>
                           {% if mega_images %}
                             <div class="tw-my-12 tw-px-6.5 tw-space-y-12 tw-mx-1.5">
                               {% for mega_image in mega_images %}
                                 {% assign label = mega_image.settings.menu_label | downcase %}
                                 {% if label == menu_label %}
-                                 {% render 'mega-menu-image', mega_image: mega_image%}
+                                  {% render 'mega-menu-image'
+                                    , mega_image: mega_image %}
                                 {% endif %}
                               {% endfor %}
-        
+
                             </div>
                           {% endif %}
                         </div>

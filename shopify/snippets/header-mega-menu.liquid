@@ -16,7 +16,22 @@
     {%- for link in section.settings.menu.links -%}
       <li>
         {% assign mega_images = section.blocks | where: 'type', 'images' %}
+        {% assign mega_columns = section.blocks | where: 'type', 'columns' %}
+
         {% assign menu_label = link.title | downcase %}
+        {% assign mega_images_list = '' %}
+        {% assign mega_columns_list = '' %}
+
+        {% for mega_image in mega_images %}
+          {% assign label = mega_image.settings.menu_label | downcase %}
+          {% assign mega_images_list = mega_images_list | append: label | append: ',' %}
+        {% endfor %}
+
+        {% for mega_column in mega_columns %}
+          {% assign label = mega_column.settings.menu_label | downcase %}
+          {% assign mega_columns_list = mega_columns_list | append: label | append: ',' %}
+        {% endfor %}
+
         {%- if link.links != blank -%}
           <header-menu>
             <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
@@ -33,15 +48,16 @@
                 id="MegaMenu-Content-{{ forloop.index }}"
                 class="mega-menu__content color-{{ menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1">
-                <div class="page-width-desktop tw-grid tw-grid-cols-12">
+                <div class="page-width-desktop tw-py-16 tw-grid tw-grid-cols-12">
 
-                  <ul class="mega-menu__list {% if link.levels == 1 %} mega-menu__list--condensed{% endif %} tw-col-span-4" role="list">
+                  <ul class="mega-menu__list {% if link.levels == 1 %} mega-menu__list--condensed{% endif %} {% if mega_images_list contains menu_label %} tw-col-span-4 {% elsif mega_columns_list contains menu_label %} tw-col-span-12 tw-columns-3 {% endif %} {{ mega_columns_list }} {{menu_label}}" role="list">
+
                     {%- for childlink in link.links -%}
                       <li>
                         <a
                           id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                           href="{{ childlink.url }}"
-                          class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                          class="mega-menu__link mega-menu__link--level-2 tw-uppercase link{% if childlink.current %} mega-menu__link--active{% endif %}"
                           {% if childlink.current %}
                           aria-current="page"
                           {% endif %}>
@@ -72,13 +88,23 @@
                       {% for mega_image in mega_images %}
                         {% assign label = mega_image.settings.menu_label | downcase %}
                         {% if label == menu_label %}
-                          {% render 'mega-menu-image', mega_image: mega_image %}
+                          {% render 'mega-menu-image'
+                            , mega_image: mega_image %}
                         {% endif %}
                       {% endfor %}
-
                     </div>
                   {% endif %}
                 </div>
+                {% for mega_column in mega_columns %}
+                  {% assign label = mega_column.settings.menu_label | downcase %}
+                  {% if label == menu_label and mega_column.settings.title %}
+                    <div class="tw-py-[24px] tw-border-t tw-border-t-primary-400">
+                      <div class="page-width-desktop">
+                        <a href="{{mega_column.settings.link}}" class="mega-menu__link tw-uppercase tw-font-bold link !tw-p-0">{{ mega_column.settings.title }}</a>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
               </div>
             </details>
           </header-menu>
