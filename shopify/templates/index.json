@@ -121,43 +121,71 @@
         "padding_bottom": 0
       }
     },
-    "collage": {
-      "type": "collage",
+    "collection_link_blocks_rPainJ": {
+      "type": "collection-link-blocks",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "link_aAf6Rb": {
+          "type": "link",
           "settings": {
-            "collection": ""
+            "collection": "college-campus-scarves",
+            "title": "Collegiate",
+            "image": "shopify:\/\/shop_images\/image-02.jpg"
           }
         },
-        "product": {
-          "type": "product",
+        "link_cBADeM": {
+          "type": "link",
           "settings": {
-            "product": "",
-            "second_image": false
+            "collection": "cities",
+            "title": "Cosmopolitan",
+            "image": "shopify:\/\/shop_images\/image-03.jpg"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "link_fWcywp": {
+          "type": "link",
           "settings": {
-            "collection": ""
+            "collection": "summer-getaways",
+            "title": "Summers",
+            "image": "shopify:\/\/shop_images\/image-04.jpg"
+          }
+        },
+        "link_hKHk4H": {
+          "type": "link",
+          "settings": {
+            "collection": "the-classic-collection",
+            "title": "Classic",
+            "image": "shopify:\/\/shop_images\/image-05.jpg"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "link_aAf6Rb",
+        "link_cBADeM",
+        "link_fWcywp",
+        "link_hKHk4H"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "Shop by Collection",
+        "image": "shopify:\/\/shop_images\/image-01.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/image-01_a06758d5-df26-4830-bcbd-7edeb1a27c5b.jpg",
+        "padding_top": 104,
+        "padding_bottom": 104
+      }
+    },
+    "image_banner_dM74LL": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Image.jpg",
+        "full_width": false,
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     }
   },
@@ -166,6 +194,7 @@
     "brand_partnerships_x7HB8q",
     "image_link_blocks_CLEthL",
     "featured_collection",
-    "collage"
+    "collection_link_blocks_rPainJ",
+    "image_banner_dM74LL"
   ]
 }
