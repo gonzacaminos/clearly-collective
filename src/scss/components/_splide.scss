@@ -1,0 +1,35 @@
+.splide__pagination.with-numbers {
+  counter-reset: pagination-num;
+  justify-content: start;
+  margin-top: 16px;
+  @apply tw-mt-16 lg:tw-mt-[16px];
+
+  .splide__pagination__page {
+    &:before {
+      counter-increment: pagination-num;
+      content: counter(pagination-num);
+    }
+
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    color: white;
+    border-radius: 100%;
+    margin-right: 8px;
+
+    &.is-active,
+    &:hover {
+      @apply tw-bg-secondary-1000 tw-border-secondary-1000 tw-text-primary-700;
+    }
+  }
+}
+
+.splide__slide.transition-height {
+  transition: all 0.3ms;
+  &:not(.is-active) {
+    max-height: 0 !important;
+  }
+}

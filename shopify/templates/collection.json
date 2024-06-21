@@ -30,10 +30,19 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "how-to-wear": {
+      "type": "how-to-wear",
+      "settings": {
+        "title": "Data",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "how-to-wear"
   ]
 }
