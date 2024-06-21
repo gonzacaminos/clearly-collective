@@ -36,3 +36,10 @@
     }
   }
 }
+
+product-recommendations {
+  @apply tw-border-y tw-border-y-secondary-400;
+  .related-products__heading {
+    @apply tw-mb-4;
+  }
+}

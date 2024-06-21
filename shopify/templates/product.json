@@ -91,13 +91,13 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 12
+        "padding_bottom": 80
       }
     },
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "YOU MAY BE INTERESTED IN",
         "heading_size": "h0",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -108,28 +108,28 @@
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "padding_top": 104,
+        "padding_bottom": 104
       }
     },
     "how_to_wear_FFUNGJ": {
       "type": "how-to-wear",
       "settings": {
         "title": "Collections",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "custom_form_iBzMaA": {
       "type": "custom-form",
       "settings": {
         "heading": "Custom Requests",
-        "description": "Initial consultation is always free. For more information regarding pricing and minimums, please visit our FAQ page",
+        "description": "Initial consultation is always free. For more information regarding pricing and minimums, please visit our FAQ page.",
         "success_message": "Message sent. I'll get in touch with you soon!",
         "error_message": "Something went wrong. Please try again later.",
         "form_type": "CustomRequest",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 104,
+        "padding_bottom": 104
       }
     }
   },
