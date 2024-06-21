@@ -1,0 +1,38 @@
+.product {
+  .product__info-wrapper {
+    @apply lg:tw-pl-[150px];
+    .product__title h1 {
+      @apply tw-font-medium tw-text-black tw-font-body tw-text-text-xl;
+      margin-bottom: 2.4rem;
+    }
+
+    .product__text.caption-with-letter-spacing {
+      @apply tw-font-bold tw-text-primary-500 tw-mb-3.5;
+    }
+
+    .price {
+      @apply tw-font-medium tw-text-primary-700 tw-text-text-md tw-mb-20;
+    }
+
+    .product-form__quantity {
+      margin-bottom: 3.2rem;
+      .quantity__label {
+        @apply tw-mb-6.5 tw-font-bold tw-text-neutral-200;
+      }
+
+      .quantity {
+        @apply tw-text-black tw-border-neutral-500;
+        width: calc(
+          22rem / var(--font-body-scale) + var(--inputs-border-width) * 2
+        );
+        .quantity__button {
+          @apply tw-text-black;
+        }
+      }
+    }
+
+    .product__description {
+      @apply tw-text-neutral-300 tw-space-y-8;
+    }
+  }
+}

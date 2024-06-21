@@ -80,6 +80,8 @@
           id="ProductInfo-{{ section.id }}"
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
+          {% render 'breadcrumbs' %}
+
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
           {%- for block in section.blocks -%}
@@ -653,6 +655,22 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+              {%- when 'faq_link' -%}
+                <div class="tw-p-6.5 tw-bg-secondary-200 tw-border tw-border-secondary-400 tw-flex tw-text-neutral-300 [&_a]:tw-underline">
+                  <p>{{ block.settings.text }}</p>
+                   {% render 'icon-right-arrow', class: '-tw-rotate-45' %}
+                </div>
+              {%- when 'how-to-wear' -%}
+                <a href="#how-to-wear" class="tw-relative tw-hidden lg:tw-block tw-w-full tw-mt-16 tw-text-white">
+                  <div class="tw-flex tw-relative tw-z-10 tw-p-10">
+                    {% render 'icon-question-mark' %}
+                    <div class="tw-pl-[24px]">
+                      <p class="tw-font-heading tw-uppercase tw-text-[24px] tw-mb-3.5">{{ block.settings.title }}</p>
+                      <p>{{ block.settings.description }}</p>
+                    </div>
+                  </div>
+                  {{ block.settings.image | image_url: width: 290 | image_tag: class: 'tw-absolute tw-inset-0 tw-object-cover tw-w-full tw-h-full' }}
+                </a>
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -2067,7 +2085,41 @@
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
         }
       ]
-    }
+    },
+     {
+      "type": "faq_link",
+      "name": "FAQ Link",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Content"
+        }
+      ]
+     },
+     {
+        "type": "how-to-wear",
+        "name": "How to wear anchor",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
   ],
   "settings": [
     {

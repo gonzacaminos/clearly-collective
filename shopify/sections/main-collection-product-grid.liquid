@@ -118,7 +118,7 @@
                     <p class="tw-font-heading tw-uppercase tw-text-[24px] tw-mb-3.5">{{ block.settings.title }}</p>
                     <p>{{ block.settings.description }}</p>
                   </div>
-                  {{ block.settings.image | image_url: width: 290 | image_tag: class: 'tw-absolute tw-inset-0 tw-object-cover tw-full tw-h-full' }}
+                  {{ block.settings.image | image_url: width: 290 | image_tag: class: 'tw-absolute tw-inset-0 tw-object-cover tw-w-full tw-h-full' }}
                 </a>
               {% endif %}
             {% endfor %}

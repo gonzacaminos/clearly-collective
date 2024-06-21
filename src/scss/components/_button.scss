@@ -20,3 +20,7 @@
   font-weight: 700;
   border: auto;
 }
+
+.button.button--primary {
+  @apply tw-bg-primary-500 tw-text-white hover:tw-bg-secondary-500 hover:tw-text-primary-700 tw-uppercase;
+}
