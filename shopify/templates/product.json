@@ -50,6 +50,20 @@
           "type": "description",
           "settings": {
           }
+        },
+        "faq_link_BMHXVt": {
+          "type": "faq_link",
+          "settings": {
+            "text": "For more questions related to material care, <a href=\"\/pages\/contact-us-1\" title=\"Contact Us\"><strong>visit our FAQ section.<\/strong><\/a>"
+          }
+        },
+        "how_to_wear_mnAC3b": {
+          "type": "how-to-wear",
+          "settings": {
+            "title": "How to Wear",
+            "description": "The possibilities are endless, but here's some inspiration.",
+            "image": "shopify:\/\/shop_images\/Group_1_2.jpg"
+          }
         }
       },
       "block_order": [
@@ -60,7 +74,9 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description"
+        "description",
+        "faq_link_BMHXVt",
+        "how_to_wear_mnAC3b"
       ],
       "settings": {
         "enable_sticky_info": true,

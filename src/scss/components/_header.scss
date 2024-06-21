@@ -85,7 +85,8 @@
 
 .header__icon--cart {
   position: relative;
-  @apply tw-mr-4 lg:tw-mr-0;
+  margin-right: 1rem;
+  @apply lg:tw-mr-0;
 }
 
 .header .list-menu__item {

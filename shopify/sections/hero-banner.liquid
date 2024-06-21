@@ -31,15 +31,15 @@
                   {{ block.settings.image | image_url: height: 600 | image_tag: class: 'tw-aspect-square lg:tw-aspect-auto tw-object-cover' }}
                 </div>
               {% endif %}
-              <div class="tw-p-10">
+              <div class="tw-py-3 lg:tw-p-4">
                 {% if block.settings.title != blank %}
-                  <h2 class=" tw-text-display-lg tw-text-secondary-800 tw-font-heading tw-uppercase tw-leading-none tw-mb-10">{{ block.settings.title }}</h2>
+                  <h2 class="tw-text-text-xl lg:tw-text-display-lg tw-text-secondary-800 tw-font-heading tw-uppercase tw-leading-none tw-mb-3">{{ block.settings.title }}</h2>
                 {% endif %}
                 {% if block.settings.subtitle != blank %}
-                  <h3 class="tw-text-md tw-text-white tw-font-medium tw-font-body tw-mb-16">{{ block.settings.subtitle }}</h3>
+                  <h3 class="tw-text-md tw-text-white tw-font-medium tw-font-body tw-mb-5">{{ block.settings.subtitle }}</h3>
                 {% endif %}
                 {% if block.settings.content != blank %}
-                  <div class="tw-text-white tw-mb-16">
+                  <div class="tw-text-white tw-mb-5">
                     {{ block.settings.content }}
                   </div>
                 {% endif %}
@@ -59,7 +59,7 @@
 
 
       {%- if section.blocks.size > 1 -%}
-        <div class="lg:tw-absolute tw-left-0 xl2:tw-left-[-70px]  tw-bg-primary-500 slider-buttons tw-flex lg:tw-flex-col tw-items-center tw-mt-16 lg:tw-mt-0">
+        <div class="lg:tw-absolute tw-left-0 xl2:tw-left-[-70px]  tw-bg-primary-500 slider-buttons tw-flex lg:tw-flex-col tw-items-center tw-my-3 lg:tw-my-0">
           <button
             type="button"
             class="slider-button slider-button--prev !tw-hidden"
@@ -69,7 +69,7 @@
             {% render 'icon-caret' %}
           </button>
 
-          <span class="lg:tw-hidden tw-mr-3.5	tw-block tw-text-secondary-800">01</span>
+          <span class="lg:tw-hidden tw-mr-1	tw-block tw-text-secondary-800">01</span>
 
           <div class="tw-flex lg:tw-block tw-w-full">
             {%- for block in section.blocks -%}
@@ -77,7 +77,7 @@
                 class="slider-counter__link tw-block tw-grow tw-group !tw-p-0"
                 aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
                 aria-controls="Slider-{{ section.id }}">
-                <span class="tw-block lg:tw-p-5 tw-border-t-2 lg:tw-border-t-0 lg:tw-border-l-2 tw-text-primary-200 group-[.active]:tw-text-secondary-800 group-[.active]:tw-border-secondary-800">
+                <span class="tw-block lg:tw-p-2 tw-border-t-2 lg:tw-border-t-0 lg:tw-border-l-2 tw-text-primary-200 group-[.active]:tw-text-secondary-800 group-[.active]:tw-border-secondary-800">
                   <span class="tw-hidden lg:tw-block">
                     {{ forloop.index -}}
                   </span>
@@ -86,7 +86,7 @@
             {%- endfor -%}
           </div>
 
-          <span class="lg:tw-hidden tw-ml-3.5	tw-block tw-text-secondary-800">0{{ section.blocks.size }}</span>
+          <span class="lg:tw-hidden tw-ml-1	tw-block tw-text-secondary-800">0{{ section.blocks.size }}</span>
           <button
             type="button"
             class="slider-button slider-button--next !tw-hidden"

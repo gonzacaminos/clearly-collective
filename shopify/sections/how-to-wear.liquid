@@ -17,21 +17,21 @@
 {% if data %}
   <div class="section-{{ section.id }}-padding" id="how-to-wear">
     <div class="page-width">
-      <div class=" tw-bg-primary-500 tw-p-8 lg:tw-p-16 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-16">
+      <div class=" tw-bg-primary-500 tw-p-3 lg:tw-p-5 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-5">
         <div class="tw-flex tw-flex-col lg:tw-justify-between">
           {% if data.eyebrow %}
             <p class="tw-text-white tw-flex tw-items-center tw-uppercase tw-font-bold tw-text-text-sm">{% render 'icon-line' %}
-              <span class="tw-pl-6">{{ data.eyebrow }}</span>
+              <span class="tw-pl-2">{{ data.eyebrow }}</span>
             </p>
           {% endif %}
 
-          <div class="splide splide-how-to-wear-text tw-mt-9 tw-mb-4 lg:tw-my-auto">
+          <div class="splide splide-how-to-wear-text tw-mt-5 tw-mb-5 lg:tw-my-auto">
 
             <div class="splide__track">
               <ul class="splide__list">
                 {% for option in data.options.value %}
                   <li class="splide__slide transition-height">
-                    <span class="tw-text-display-sm tw-uppercase tw-font-heading tw-leading-none tw-text-secondary-800 tw-block tw-mb-6 lg:tw-mb-9">{{ option.title }}</span>
+                    <span class="tw-text-display-sm tw-uppercase tw-font-heading tw-leading-none tw-text-secondary-800 tw-block tw-mb-2 lg:tw-mb-3">{{ option.title }}</span>
                     <span class="tw-text-white tw-block">{{ option.description }}</span>
                   </li>
                 {% endfor %}

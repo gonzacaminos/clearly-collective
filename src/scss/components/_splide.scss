@@ -2,7 +2,7 @@
   counter-reset: pagination-num;
   justify-content: start;
   margin-top: 16px;
-  @apply tw-mt-16 lg:tw-mt-[16px];
+  @apply tw-mt-5 lg:tw-mt-[16px];
 
   .splide__pagination__page {
     &:before {

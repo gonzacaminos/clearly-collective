@@ -24,9 +24,9 @@
       {% endif %}
     {% endif %}
 
-    <div class="tw-relative tw-inset-0 tw-p-10 tw-text-white tw-max-w-5xl tw-flex tw-flex-col tw-z-[1]">
+    <div class="tw-relative tw-inset-0 tw-p-3 lg:tw-p-4 tw-text-white tw-max-w-5xl tw-flex tw-flex-col tw-z-[1]">
       <span class="tw-text-white tw-block tw-mb-section lg:tw-mb-auto tw-font-bold tw-text-text-sm  tw-uppercase">{{ collection.metafields.custom.eyebrow }}</span>
-      <h1 class="tw-text-white tw-block tw-mb-3.5	tw-font-heading tw-text-text-lg md:tw-text-display-sm  tw-uppercase">{{ collection.metafields.custom.headline | default: collection.title }}</h1>
+      <h1 class="tw-text-white tw-block tw-font-heading tw-text-text-lg md:tw-text-display-sm  tw-uppercase">{{ collection.metafields.custom.headline | default: collection.title }}</h1>
       {% if section.settings.show_collection_description %}
         <p>{{ collection.description }}</p>
       {% endif %}

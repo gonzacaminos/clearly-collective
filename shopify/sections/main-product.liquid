@@ -656,16 +656,16 @@
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
               {%- when 'faq_link' -%}
-                <div class="tw-p-6.5 tw-bg-secondary-200 tw-border tw-border-secondary-400 tw-flex tw-text-neutral-300 [&_a]:tw-underline">
+                <div class="tw-p-2 tw-bg-secondary-200 tw-border tw-border-secondary-400 tw-flex tw-text-neutral-300 [&_a]:tw-underline">
                   <p>{{ block.settings.text }}</p>
                    {% render 'icon-right-arrow', class: '-tw-rotate-45' %}
                 </div>
               {%- when 'how-to-wear' -%}
-                <a href="#how-to-wear" class="tw-relative tw-hidden lg:tw-block tw-w-full tw-mt-16 tw-text-white">
-                  <div class="tw-flex tw-relative tw-z-10 tw-p-10">
+                <a href="#how-to-wear" class="tw-relative tw-hidden lg:tw-block tw-w-full tw-mt-4 tw-text-white">
+                  <div class="tw-flex tw-relative tw-z-10 tw-p-3">
                     {% render 'icon-question-mark' %}
                     <div class="tw-pl-[24px]">
-                      <p class="tw-font-heading tw-uppercase tw-text-[24px] tw-mb-3.5">{{ block.settings.title }}</p>
+                      <p class="tw-font-heading tw-uppercase tw-text-[24px] tw-mb-1">{{ block.settings.title }}</p>
                       <p>{{ block.settings.description }}</p>
                     </div>
                   </div>

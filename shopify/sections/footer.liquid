@@ -250,7 +250,7 @@
           {%- endif -%}
 
            {%- if section.settings.show_social and has_social_icons -%}
-              <div class="tw-w-full lg:tw-hidden tw-flex tw-items-center tw-border-y tw-py-16 tw-mb-16 tw-border-y-primary-400">
+              <div class="tw-w-full lg:tw-hidden tw-flex tw-items-center tw-border-y tw-py-5  tw-mb-5 tw-border-y-primary-400">
                 {% if section.settings.social_text %}
                   <h2 class="footer-block__heading social">{{section.settings.social_text}}</h2>
                 {% endif %}
@@ -324,7 +324,7 @@
           </ul>
         {%- endif -%}
         {%- if section.settings.bottom_menu.links.size > 0-%}
-          <ul class="list-unstyled tw-flex tw-flex-wrap tw-mt-12 md:tw-mt-0 md:tw-ml-auto tw-space-x-10">
+          <ul class="list-unstyled tw-flex tw-flex-wrap tw-mt-4 md:tw-mt-0 md:tw-ml-auto tw-space-x-3">
             {% for link in  section.settings.bottom_menu.links %}
                <li>
                   <small class="copyright__content"

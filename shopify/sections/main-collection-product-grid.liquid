@@ -113,9 +113,9 @@
           {% if section.blocks.size > 0 %}
             {% for block in section.blocks %}
               {% if block.type == 'how-to-wear' %}
-                <a href="#how-to-wear" class="tw-relative tw-hidden lg:tw-block tw-w-full tw-mt-16">
-                  <div class="tw-relative tw-z-10 tw-text-white tw-p-10">
-                    <p class="tw-font-heading tw-uppercase tw-text-[24px] tw-mb-3.5">{{ block.settings.title }}</p>
+                <a href="#how-to-wear" class="tw-relative tw-hidden lg:tw-block tw-w-full tw-mt-5">
+                  <div class="tw-relative tw-z-10 tw-text-white tw-p-4">
+                    <p class="tw-font-heading tw-uppercase tw-text-[24px] tw-mb-1">{{ block.settings.title }}</p>
                     <p>{{ block.settings.description }}</p>
                   </div>
                   {{ block.settings.image | image_url: width: 290 | image_tag: class: 'tw-absolute tw-inset-0 tw-object-cover tw-w-full tw-h-full' }}

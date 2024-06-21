@@ -13,16 +13,16 @@
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding collection-link-blocks">
-  <div class="page-width tw-grid lg:tw-grid-cols-2 tw-items-center tw-gap-16">
+  <div class="page-width tw-grid lg:tw-grid-cols-2 tw-items-center tw-gap-5">
 
     <div>
 
       {% if section.settings.mobile_image %}
-        {{ section.settings.mobile_image | image_url: width: 600 | image_tag: class: 'tw-block lg:tw-hidden tw-mb-12' }}
+        {{ section.settings.mobile_image | image_url: width: 600 | image_tag: class: 'tw-block lg:tw-hidden tw-mb-4' }}
       {% endif %}
 
       {% if section.settings.title %}
-        <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-16">
+        <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-5">
           {{ section.settings.title }}
         </h2>
       {% endif %}
@@ -32,7 +32,7 @@
         {% for block in section.blocks %}
           <a
             href="{{block.settings.collection.url}}"
-            class="tw-group hover:tw-bg-primary-400 tw-text-primary-500 hover:tw-text-white scroll-trigger animate--slide-in tw-flex tw-items-center tw-p-[32px] tw-border-b tw-border-b-neutral-500"
+            class="tw-group hover:tw-bg-primary-400 tw-text-primary-500 hover:tw-text-white scroll-trigger animate--slide-in tw-flex tw-items-center tw-py-4 lg:tw-px-4 tw-border-b tw-border-b-neutral-500"
             data-index="{{forloop.index}}">
 
             <p class="tw-block tw-text-text-md">
@@ -43,7 +43,7 @@
               {% endif %}
             </p>
             {% render 'icon-right-arrow'
-              , class: 'tw-absolute tw-z-[1] tw-right-10 -tw-rotate-45 lg:tw-rotate-0 lg:tw-opacity-0 group-hover:tw-opacity-100 group-hover:-tw-rotate-45  tw-duration-300' %}
+              , class: 'tw-absolute tw-z-[1] tw-right-3 -tw-rotate-45 lg:tw-rotate-0 lg:tw-opacity-0 group-hover:tw-opacity-100 group-hover:-tw-rotate-45  tw-duration-300' %}
           </a>
         {% endfor %}
       </div>

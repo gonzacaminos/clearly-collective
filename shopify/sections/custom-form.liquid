@@ -15,10 +15,10 @@
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient tw-bg-secondary-300">
-  <div class="contact page-width section-{{ section.id }}-padding tw-grid lg:tw-grid-cols-2 tw-gap-y-12 lg:tw-gap-x-16">
+  <div class="contact page-width section-{{ section.id }}-padding tw-grid lg:tw-grid-cols-2 tw-gap-y-5 lg:tw-gap-x-5">
     <div>
       {%- if section.settings.heading != blank -%}
-        <h2 class="tw-text-text-xl tw-uppercase tw-mb-7">
+        <h2 class="tw-text-text-xl tw-uppercase tw-mb-2">
           {{ section.settings.heading }}
         </h2>
       {%- endif -%}
@@ -39,7 +39,7 @@
           <input
             type="text"
             name="contact[name]"
-            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-6 tw-py-5 tw-w-full tw-text-neutral-300 tw-mb-6.5"
+            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-2"
             placeholder="Name"
             required
             id="name" />
@@ -47,14 +47,14 @@
           <input
             type="tel"
             name="contact[phone]"
-            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-6 tw-py-5 tw-w-full tw-text-neutral-300 tw-mb-6.5"
+            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-2"
             placeholder="Phone"
             id="phone" />
 
           <input
             type="email"
             name="contact[email]"
-            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-6 tw-py-5 tw-w-full tw-text-neutral-300 tw-mb-6.5"
+            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-2"
             required
             placeholder="Email"
             id="email" />
@@ -66,7 +66,7 @@
             value="{{section.settings.form_type}}" />
           <textarea
             name="contact[body]"
-            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-6 tw-py-5 tw-w-full tw-text-neutral-300 tw-mb-16"
+            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-5"
             placeholder="Message"
             required
             id="message"
@@ -76,11 +76,11 @@
           <button type="submit" class="button button--primary tw-bg-primary-500 hover:tw-bg-secondary-500 tw-text-white hover:tw-text-primary-700 tw-uppercase">Send</button>
 
           {%- if form.posted_successfully? -%}
-            <div class="tw-border tw-border-secondary-500 tw-p-6.5 tw-bg-white tw-flex tw-mt-16">{% render 'icon-check' %}
+            <div class="tw-border tw-border-secondary-500 tw-mb-2 tw-bg-white tw-flex tw-mt-5">{% render 'icon-check' %}
               <span class="tw-pl-3.5">{{ section.settings.success_message }}</span>
             </div>
           {%- elsif form.errors -%}
-            <div class="tw-border tw-border-secondary-500 tw-p-6.5 tw-bg-white tw-flex tw-mt-16">
+            <div class="tw-border tw-border-secondary-500 tw-mb-2 tw-bg-white tw-flex tw-mt-5">
               {% render 'icon-warning' %}
               <span class="tw-pl-3.5">{{ section.settings.error_message }}</span>
             </div>

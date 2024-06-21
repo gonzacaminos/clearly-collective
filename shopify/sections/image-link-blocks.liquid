@@ -13,7 +13,7 @@
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding">
-  <div class="page-width tw-space-y-3.5">
+  <div class="page-width tw-space-y-1">
 
     {% for block in section.blocks %}
       <a href="{{block.settings.url}}" class="scroll-trigger animate--slide-in tw-block tw-relative tw-group tw-overflow-hidden tw-transition-all tw-w-full  after:tw-absolute after:tw-inset-0 after:tw-bg-primary-700 after:tw-opacity-60">
@@ -23,13 +23,13 @@
           {{ block.settings.mobile_image | image_url: width: 600 | image_tag: class: 'lg:tw-hidden tw-object-cover tw-w-full' }}
         {% endif %}
 
-        <div class="tw-absolute tw-inset-0 tw-p-10 tw-text-white tw-max-w-5xl tw-flex tw-flex-col tw-z-[1] tw-uppercase">
+        <div class="tw-absolute tw-inset-0 tw-p-4 tw-text-white tw-max-w-5xl tw-flex tw-flex-col tw-z-[1] tw-uppercase">
           <span class="tw-block tw-mb-auto tw-font-bold tw-text-text-sm">{{ block.settings.eyebrow }}</span>
-          <span class="tw-block tw-mb-3.5	tw-font-heading tw-text-text-lg md:tw-text-display-sm">{{ block.settings.title }}</span>
+          <span class="tw-block tw-mb-1	tw-font-heading tw-text-text-lg md:tw-text-display-sm">{{ block.settings.title }}</span>
           <span>{{ block.settings.description }}</span>
         </div>
         {% render 'icon-right-arrow'
-          , class: 'tw-absolute tw-top-10 tw-z-[1] tw-right-10 tw-opacity-0 group-hover:tw-opacity-100 group-hover:-tw-rotate-45  tw-duration-500 tw-hidden lg:tw-block ' %}
+          , class: 'tw-absolute tw-top-10 tw-z-[1] tw-right-3 tw-opacity-0 group-hover:tw-opacity-100 group-hover:-tw-rotate-45  tw-duration-500 tw-hidden lg:tw-block ' %}
       </a>
     {% endfor %}
   </div>

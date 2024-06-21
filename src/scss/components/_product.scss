@@ -7,17 +7,17 @@
     }
 
     .product__text.caption-with-letter-spacing {
-      @apply tw-font-bold tw-text-primary-500 tw-mb-3.5;
+      @apply tw-font-bold tw-text-primary-500 tw-mb-1;
     }
 
     .price {
-      @apply tw-font-medium tw-text-primary-700 tw-text-text-md tw-mb-20;
+      @apply tw-font-medium tw-text-primary-700 tw-text-text-md tw-mb-6;
     }
 
     .product-form__quantity {
       margin-bottom: 3.2rem;
       .quantity__label {
-        @apply tw-mb-6.5 tw-font-bold tw-text-neutral-200;
+        @apply tw-mb-2 tw-font-bold tw-text-neutral-200;
       }
 
       .quantity {
@@ -32,7 +32,7 @@
     }
 
     .product__description {
-      @apply tw-text-neutral-300 tw-space-y-8;
+      @apply tw-text-neutral-300 tw-space-y-2;
     }
   }
 }

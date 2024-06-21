@@ -14,24 +14,24 @@
 
 <div class="section-{{ section.id }}-padding">
   <div
-    class="splide splide-slider  tw-space-y-16"
+    class="splide splide-slider  tw-space-y-5"
     aria-labelledby="carousel-heading"
     data-per-page="4"
     data-padding-left="50"
     data-padding-right="80">
     <div class="page-width">
-      <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-6">
+      <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-2">
         {{ section.settings.title }}
       </h2>
       <div class="tw-flex tw-items-center">
         {% if section.settings.description != blank %}
           <p>{{ section.settings.description }}</p>
         {% endif %}
-        <div class="splide__arrows tw-hidden lg:tw-flex tw-ml-4 ">
-          <button class="splide__arrow splide__arrow--prev tw-mr-3.5 tw-p-5 tw-border tw-border-primary-500 disabled:tw-opacity-50 hover:tw-bg-primary-500 hover:tw-text-white">
+        <div class="splide__arrows tw-hidden lg:tw-flex tw-ml-1">
+          <button class="splide__arrow splide__arrow--prev tw-mr-1 tw-p-1.5 tw-border tw-border-primary-500 disabled:tw-opacity-50 hover:tw-bg-primary-500 hover:tw-text-white">
             {% render 'icon-chevron-left' %}
           </button>
-          <button class="splide__arrow splide__arrow--next tw-p-5 tw-border tw-border-primary-500 hover:tw-bg-primary-500 hover:tw-text-white">
+          <button class="splide__arrow splide__arrow--next tw-p-1.5 tw-border tw-border-primary-500 hover:tw-bg-primary-500 hover:tw-text-white">
             {% render 'icon-chevron-right' %}
           </button>
         </div>
@@ -52,9 +52,9 @@
         {%- for partnership in partnerships.value -%}
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="splide__slide  tw-bg-white tw-p-10 tw-text-center tw-border tw-border-secondary-300 hover:tw-bg-primary-500 hover:tw-text-white tw-transition-all tw-group"
+            class="splide__slide  tw-bg-white tw-p-3 tw-text-center tw-border tw-border-secondary-300 hover:tw-bg-primary-500 hover:tw-text-white tw-transition-all tw-group"
             {{ block.shopify_attributes }}>
-            <a href="{{shop.url}}{{partnership.system.url}}" class="tw-space-y-7">
+            <a href="{{shop.url}}{{partnership.system.url}}" class="tw-space-y-2">
               {% assign image = partnership.logo %}
               {% unless image %}
                 {% assign image = images['Fallback_Brand.png'] %}
