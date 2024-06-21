@@ -12,20 +12,20 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding">
-  <div class="collection-hero page-width tw-block tw-relative tw-group tw-overflow-hidden tw-transition-all tw-w-full  after:tw-absolute after:tw-inset-0 after:tw-bg-primary-700 after:tw-opacity-60 tw-min-h-[320px] {%  unless section.settings.show_collection_image %} no-image {% endunless %}">
+<div class="section-{{ section.id }}-padding  page-width">
+  <div class="collection-hero tw-flex tw-items-stretch tw-relative tw-group tw-overflow-hidden tw-transition-all tw-w-full  after:tw-absolute after:tw-inset-0 after:tw-bg-primary-700 after:tw-opacity-60 tw-min-h-[320px] {%  unless section.settings.show_collection_image %} no-image {% endunless %}">
 
     {% assign cover_image = collection.metafields.custom.cover_image %}
     {% if section.settings.show_collection_image %}
       {% if cover_image %}
-        {{ cover_image | image_url: height: 320 | image_tag: class: '' }}
+        {{ cover_image | image_url: height: 320 | image_tag: class: 'tw-absolute tw-object-cover tw-inset-0 tw-h-full tw-w-full' }}
       {% else %}
-        {{ section.settings.fallback_image | image_url: height: 320 | image_tag: class: '' }}
+        {{ section.settings.fallback_image | image_url: height: 320 | image_tag: class: 'tw-absolute tw-object-cover tw-inset-0 tw-h-full tw-w-full' }}
       {% endif %}
     {% endif %}
 
-    <div class="tw-absolute tw-inset-0 tw-p-10 tw-text-white tw-max-w-5xl tw-flex tw-flex-col tw-z-[1]">
-      <span class="tw-text-white tw-block tw-mb-auto tw-font-bold tw-text-text-sm  tw-uppercase">{{ collection.metafields.custom.eyebrow }}</span>
+    <div class="tw-relative tw-inset-0 tw-p-10 tw-text-white tw-max-w-5xl tw-flex tw-flex-col tw-z-[1]">
+      <span class="tw-text-white tw-block tw-mb-section lg:tw-mb-auto tw-font-bold tw-text-text-sm  tw-uppercase">{{ collection.metafields.custom.eyebrow }}</span>
       <h1 class="tw-text-white tw-block tw-mb-3.5	tw-font-heading tw-text-text-lg md:tw-text-display-sm  tw-uppercase">{{ collection.metafields.custom.headline }}</h1>
       {% if section.settings.show_collection_description %}
         <p>{{ collection.description }}</p>
