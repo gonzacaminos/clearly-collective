@@ -145,6 +145,9 @@
       </div>
       <div class="card__content">
         <div class="card__information">
+          {% if card_product.vendor %}
+            <p class="tw-text-text-xs tw-mb-3">{{card_product.vendor}}</p>
+          {% endif %}
           <h3
             class="card__heading tw-font-body tw-text-primary-500 tw-font-medium tw-text-text-lg tw-capitalize"
             {% if card_product.featured_media or settings.card_style == 'card' %}
