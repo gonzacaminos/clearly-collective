@@ -1,0 +1,103 @@
+cart-drawer {
+  .cart-drawer {
+    h2,
+    h3,
+    h4 {
+      @apply tw-font-body;
+    }
+    .drawer__inner {
+      @apply tw-bg-secondary-50 tw-px-0;
+      .drawer__header {
+        @apply tw-px-2 lg:tw-px-3 tw-py-4 tw-items-center tw-bg-white;
+        .drawer__heading {
+          @apply tw-text-primary-400 tw-text-text-lg tw-font-medium tw-mb-0;
+        }
+
+        .drawer__close {
+          color: black;
+          top: inherit;
+          right: -10px;
+        }
+      }
+
+      cart-drawer-items {
+        @apply tw-px-2 lg:tw-px-3 tw-py-3;
+
+        .cart-item__details {
+          @apply tw-col-span-3 lg:tw-col-span-2;
+        }
+        thead {
+          @apply tw-hidden;
+        }
+
+        .cart-items td {
+          @apply tw-pt-2;
+        }
+
+        .cart-item__media {
+          max-width: 80px;
+        }
+
+        .cart-item__name {
+          @apply tw-font-body tw-text-primary-500 lg:tw-text-text-md;
+        }
+
+        .cart-item__totals {
+          &.mobile {
+            @apply lg:tw-hidden tw-pt-0 tw-justify-start;
+          }
+          &.right {
+            @apply tw-hidden lg:tw-block;
+          }
+          .price {
+            @apply tw-text-primary-700 tw-font-bold tw-text-text-md;
+          }
+        }
+
+        .product-option {
+          @apply tw-text-primary-400 tw-font-bold;
+        }
+
+        .cart-item__quantity-wrapper {
+          @apply tw-justify-between;
+          .quantity {
+            @apply tw-bg-white;
+            width: calc(
+              12rem / var(--font-body-scale) + var(--inputs-border-width) * 2
+            );
+
+            .icon {
+              @apply tw-text-secondary-1000;
+            }
+          }
+          cart-remove-button {
+            @apply tw-mt-0;
+            button {
+              @apply lg:tw-min-w-[46px] lg:tw-min-h-[46px] hover:tw-text-red-700;
+              .icon-remove {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .drawer__footer {
+      @apply tw-pl-2 lg:tw-pl-3 tw-pr-2 tw-py-3 tw-bg-white;
+
+      .totals__total {
+        @apply tw-text-text-sm tw-font-bold tw-text-primary-500 tw-uppercase;
+      }
+
+      .totals__total-value {
+        @apply tw-text-primary-700 tw-font-bold tw-text-text-md;
+      }
+
+      .tax-note {
+        @apply tw-text-primary-500;
+      }
+    }
+  }
+}
