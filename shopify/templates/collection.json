@@ -36,13 +36,23 @@
       "settings": {
         "title": "Data",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 80
+      }
+    },
+    "custom_form_zyPQRf": {
+      "type": "custom-form",
+      "settings": {
+        "heading": "Custom Requests",
+        "description": "Initial consultation is always free. For more information regarding pricing and minimums, please visit our FAQ page.",
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "how-to-wear"
+    "how-to-wear",
+    "custom_form_zyPQRf"
   ]
 }

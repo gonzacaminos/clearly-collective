@@ -1,0 +1,179 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient tw-bg-secondary-300">
+  <div class="contact page-width section-{{ section.id }}-padding tw-grid lg:tw-grid-cols-2 tw-gap-y-12 lg:tw-gap-x-16">
+    <div>
+      {%- if section.settings.heading != blank -%}
+        <h2 class="tw-text-text-xl tw-uppercase tw-mb-7">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <p class="">
+          {{ section.settings.description }}
+        </p>
+      {%- endif -%}
+    </div>
+    <div>
+      {%- form 'contact'
+        , id: section.settings.form_type
+        , class: contact_form_class -%}
+
+
+        <div>
+          <input
+            type="text"
+            name="contact[name]"
+            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-6 tw-py-5 tw-w-full tw-text-neutral-300 tw-mb-6.5"
+            placeholder="Name"
+            required
+            id="name" />
+
+          <input
+            type="tel"
+            name="contact[phone]"
+            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-6 tw-py-5 tw-w-full tw-text-neutral-300 tw-mb-6.5"
+            placeholder="Phone"
+            id="phone" />
+
+          <input
+            type="email"
+            name="contact[email]"
+            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-6 tw-py-5 tw-w-full tw-text-neutral-300 tw-mb-6.5"
+            required
+            placeholder="Email"
+            id="email" />
+
+          <input
+            type="hidden"
+            name="contact[type]"
+            id="type"
+            value="{{section.settings.form_type}}" />
+          <textarea
+            name="contact[body]"
+            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-6 tw-py-5 tw-w-full tw-text-neutral-300 tw-mb-16"
+            placeholder="Message"
+            required
+            id="message"
+            rows="6"></textarea>
+
+
+          <button type="submit" class="button button--primary tw-bg-primary-500 hover:tw-bg-secondary-500 tw-text-white hover:tw-text-primary-700 tw-uppercase">Send</button>
+
+          {%- if form.posted_successfully? -%}
+            <div class="tw-border tw-border-secondary-500 tw-p-6.5 tw-bg-white tw-flex tw-mt-16">{% render 'icon-check' %}
+              <span class="tw-pl-3.5">{{ section.settings.success_message }}</span>
+            </div>
+          {%- elsif form.errors -%}
+            <div class="tw-border tw-border-secondary-500 tw-p-6.5 tw-bg-white tw-flex tw-mt-16">
+              {% render 'icon-warning' %}
+              <span class="tw-pl-3.5">{{ section.settings.error_message }}</span>
+            </div>
+          {%- endif -%}
+
+        </div>
+      {%- endform -%}
+    </div>
+
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Custom Form",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "heading",
+        "default": "t:sections.contact-form.settings.title.default",
+        "label": "t:sections.contact-form.settings.title.label"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "success_message",
+        "label": "Success message",
+        "default": "Message sent. I'll get in touch with you soon!"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "error_message",
+        "label": "Error message",
+        "default": "Something went wrong. Please try again later."
+      },
+      {
+        "type": "select",
+        "id": "form_type",
+        "label": "Form type",
+        "options": [
+          {
+            "value": "Contact",
+            "label": "Contact"
+          },
+          {
+            "value": "CustomRequest",
+            "label": "Custom Request"
+          },
+          {
+            "value": "PartnershiRequest",
+            "label": "Partnership Request"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Form"
+      }
+    ]
+  }
+{% endschema %}
