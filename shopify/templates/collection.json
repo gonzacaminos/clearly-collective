@@ -13,6 +13,19 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "how_to_wear_NcgDFR": {
+          "type": "how-to-wear",
+          "settings": {
+            "title": "How to Wear",
+            "description": "The possibilities are endless, but here's some inspiration.",
+            "image": "shopify:\/\/shop_images\/Group_1_2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "how_to_wear_NcgDFR"
+      ],
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 3,
@@ -44,6 +57,9 @@
       "settings": {
         "heading": "Custom Requests",
         "description": "Initial consultation is always free. For more information regarding pricing and minimums, please visit our FAQ page.",
+        "success_message": "Message sent. I'll get in touch with you soon!",
+        "error_message": "Something went wrong. Please try again later.",
+        "form_type": "Contact",
         "padding_top": 100,
         "padding_bottom": 100
       }
