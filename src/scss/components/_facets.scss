@@ -1,4 +1,11 @@
 .facets-vertical {
+
+  @media screen and (min-width: 750px) {
+    .facets__heading--vertical { 
+      margin-bottom: 0;
+    }
+  }
+
   .facets__summary {
     @apply tw-text-text-md tw-font-medium tw-text-neutral-300 tw-py-[24px];
     &:hover {
@@ -16,7 +23,7 @@
     }
   }
 
-  .facet-checkbox {
+  .facet-checkbox, .mobile-facets__label {
     & > input[type="checkbox"]:checked ~ .icon-checkbox {
       visibility: visible;
     }
@@ -36,6 +43,88 @@
     }
     aside.facets-wrapper {
       padding-right: 4rem;
+    }
+  }
+
+  .product-count {
+    display: none;
+  }
+  @media screen and (max-width: 989px) {
+    .facets-container {
+          margin-bottom: 3.2rem;
+      }
+  }
+
+  .mobile-facets__close {
+    color: black;
+    top: 2.6rem;
+    right: 0
+  }
+}
+
+facet-filters-form {
+
+  .mobile-facets__inner {
+    width: 100%;
+  }
+
+  .mobile-facets__count {
+    display: none;
+  }
+  
+  .mobile-facets__heading  {
+    @apply tw-text-text-lg tw-font-medium tw-font-body;
+    text-align: left;
+  }
+
+  .mobile-facets__header {
+    padding: 3.2rem 1.6rem;
+    @apply tw-border-b-secondary-200;
+  }
+
+
+
+  .mobile-facets__summary {
+    padding: 2.4rem 1.6rem;
+    @apply tw-border-y tw-border-y-secondary-300 tw-text-text-md tw-text-neutral-300 tw-font-medium first:tw-border-t-0;
+  }
+  .mobile-facets__main {
+    padding-top: 0;
+  }
+
+  .mobile-facets__footer {
+    padding-inline: 1.6rem;
+    @apply tw-bg-white tw-border-t-secondary-200;
+    .mobile-facets__clear-wrapper {
+      @apply tw-font-bold tw-border tw-border-primary-500 tw-uppercase;
+    }
+
+    button {
+      @apply tw-bg-primary-500 tw-text-white tw-font-bold tw-uppercase;
+    }
+  }
+
+  
+
+  .active-facets__button-wrapper {
+    @apply lg:tw-w-full lg:tw-justify-start;
+  }
+}
+
+menu-drawer.mobile-facets__wrapper {
+  grid-column: span 2;
+  .mobile-facets__disclosure {
+    width: 100%;
+    .mobile-facets__open-wrapper {
+      width: 100%;
+      padding: 1.2rem 3.2rem;
+      @apply tw-bg-primary-500;
+      .mobile-facets__open {
+        @apply tw-text-white tw-font-bold tw-uppercase tw-justify-center;
+        svg {
+          @apply tw-text-secondary-1000;
+        }
+      }
     }
   }
 }
