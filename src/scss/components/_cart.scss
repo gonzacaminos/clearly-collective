@@ -1,0 +1,38 @@
+.cart-page {
+  .title-wrapper-with-link {
+    @apply tw-mb-10;
+    .title--primary {
+      @apply tw-text-display-md tw-uppercase tw-text-primary-400;
+    }
+  }
+
+  table.cart-items {
+    @apply tw-border tw-border-secondary-400;
+    thead {
+      @apply tw-bg-secondary-200;
+      th {
+        @apply tw-py-2 first:tw-pl-3 last:tw-pr-3 tw-text-text-sm tw-text-primary-500 tw-font-bold tw-uppercase;
+      }
+    }
+
+    tbody {
+      .cart-item {
+        .cart-item__media {
+          @apply tw-pl-3;
+        }
+
+        .cart-item__totals {
+          @apply tw-pr-3;
+        }
+
+        td {
+          @apply tw-py-3;
+        }
+
+        .cart-item__name {
+          @apply tw-font-body tw-font-bold tw-text-text-md tw-text-primary-700;
+        }
+      }
+    }
+  }
+}
