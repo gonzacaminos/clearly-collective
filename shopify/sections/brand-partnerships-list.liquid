@@ -1,0 +1,112 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="tw-space-y-5">
+    <div class="page-width">
+      <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-2 lg:tw-text-center">
+        {{ section.settings.title }}
+      </h2>
+      <div class="tw-flex tw-items-center lg:tw-justify-center">
+        {% if section.settings.description != blank %}
+          <p class="lg:tw-text-center">{{ section.settings.description }}</p>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <div class="tw-grid md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4 page-width">
+      {% if section.settings.partnerships_data %}
+        {% assign partnerships = shop.metaobjects['partnerships_list'][section.settings.partnerships_data].partnerships %}
+      {% else %}
+        <p>Error: you need to enter the Partnerships List handle for this section to show.</p>
+      {% endif %}
+
+      {%- for partnership in partnerships.value -%}
+        <a href="{{shop.url}}{{partnership.system.url}}" class="tw-group tw-relative hover:tw-bg-primary-500 hover:tw-text-white tw-p-2 tw-flex tw-border tw-border-neutral-500 tw-items-center">
+          {% assign image = partnership.logo %}
+          {% unless image %}
+            {% assign image = images['Fallback_Brand.png'] %}
+          {% endunless %}
+          <div class="group-hover:tw-bg-white tw-shrink-0">
+            {{ image | image_url: height: 80 | image_tag: class: 'tw-w-[72px] tw-h-auto tw-shrink-0' }}
+          </div>
+
+          <h3 class="tw-ml-2 tw-text-text-lg tw-text-primary-400 group-hover:tw-text-white tw-font-body tw-tracking-normal tw-pr-4">{{ partnership.title }}</h3>
+          {% render 'icon-right-arrow'
+            , class: '-tw-rotate-45 tw-opacity-0 group-hover:tw-opacity-100 tw-absolute tw-top-2 tw-right-2 tw-w-[24px] tw-h-[24px' %}
+        </a>
+      {%- endfor -%}
+    </div>
+
+
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Brand Partnerships List",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "default": "t:sections.collection-list.settings.title.default",
+        "label": "t:sections.collection-list.settings.title.label"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "partnerships_data",
+        "label": "Partnerships List, handle",
+        "info": "Enter the list *handle*. Check your options [here](https://admin.shopify.com/store/the-clearly-collective/content/metaobjects/entries/partnerships_list)"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Brand Partnerships List"
+      }
+    ]
+  }
+{% endschema %}

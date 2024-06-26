@@ -1,0 +1,9 @@
+.rich-text {
+  .rich-text__wrapper {
+    @apply tw-w-full;
+    .rich-text__blocks {
+      max-width: 100%;
+      @apply lg:tw-w-full;
+    }
+  }
+}
