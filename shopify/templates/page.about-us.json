@@ -1,0 +1,78 @@
+{
+  "sections": {
+    "page_banner_Lpikxd": {
+      "type": "page-banner",
+      "settings": {
+        "eyebrow": "ABOUT",
+        "title": "The Clearly Collective.",
+        "description": "Founded on refined, eclectic, and community-centered design principles. Greetings and welcome to the Clearly Collective.",
+        "image": "shopify:\/\/shop_images\/Header.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Header_1.jpg",
+        "filter": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_image_XDAQjd": {
+      "type": "rich-text-image",
+      "settings": {
+        "description": "<h2><strong>Meet the founder<\/strong><\/h2><p>Notably, during her academic years, Olivia's incidental sketches garnered the attention of her mentors—one even prophesied a promising trajectory for them. However, the true epiphany occurred in the streets of New York City, when an impromptu design on a jumpsuit became a conversation starter.<\/p><p>For an extended period, the Collective's inclination leaned towards nuanced architectural illustrations, venturing across varied canvases. Initial designs, while noteworthy, encountered moments of creative stagnation. Drawing inspiration from cherished locales— our founder's alma mater, familial summer retreats, and the West Village in New York City— the Collective endeavored to craft scarves radiating elegance and encapsulating profound narratives. It became apparent that this model held potential for wider applications across diverse venues, institutions, and brands.<\/p><p>Within an astonishingly brief span, the Collective has forged invaluable collaborations with iconic brands such as LoveShackFancy, Watchbox, The NYC Highline, Cartier, and McLaren San Francisco. Central to our ethos is the art of storytelling, amalgamated with a drive to cultivate community. Designs emerging from our atelier act as vessels for these narratives. While garments echoing specific locales or corporate affiliations are commonplace, the luxury and timeless charm of a scarf renders it an exceptional canvas for tales. Its adaptability, coupled with a refined aesthetic, is indisputable.<\/p><p>The Collective envisions broadening this meld of wearable art, architecture, and narrative, reaching communities, institutions, brands, events, and industries that cherish gifting and storytelling. We approach the future with quiet optimism, envisioning a landscape brimming with boundless potential.<\/p>",
+        "image": "shopify:\/\/shop_images\/Image_537a2927-1ce1-4846-9eb6-b6ee94843b38.jpg",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_form_DN8qQh": {
+      "type": "custom-form",
+      "settings": {
+        "heading": "Mentorship progam",
+        "description": "Looking to start your own thing or need some direction post grad? I've been there. Let's chat. Fill out the form, with the first line of text saying <strong>Mentorship Program<\/strong>, and we can set up a time to go over it all. I'm excited to meet you!",
+        "success_message": "Message sent. I'll get in touch with you soon!",
+        "error_message": "Something went wrong. Please try again later.",
+        "form_type": "Mentorship",
+        "use_bg": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_form_rK4H9k": {
+      "type": "custom-form",
+      "settings": {
+        "heading": "Custom Requests",
+        "description": "Initial consultation is always free. For more information regarding pricing and minimums, please visit our FAQ page",
+        "success_message": "Message sent. I'll get in touch with you soon!",
+        "error_message": "Something went wrong. Please try again later.",
+        "form_type": "CustomRequest",
+        "use_bg": true,
+        "padding_top": 104,
+        "padding_bottom": 104
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "product": "the-big-green-scarf",
+        "heading": "YOU MAY BE INTERESTED IN",
+        "heading_size": "h1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "1",
+        "padding_top": 104,
+        "padding_bottom": 104
+      }
+    }
+  },
+  "order": [
+    "page_banner_Lpikxd",
+    "rich_text_image_XDAQjd",
+    "custom_form_DN8qQh",
+    "custom_form_rK4H9k",
+    "related-products"
+  ]
+}
