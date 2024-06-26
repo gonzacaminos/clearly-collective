@@ -1,0 +1,112 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<div class="section-{{ section.id }}-padding">
+  <div class="tw-items-stretch tw-relative tw-group tw-overflow-hidden tw-w-full tw-flex {% if section.settings.filter %} after:tw-absolute after:tw-inset-0 after:tw-bg-primary-700 after:tw-opacity-70 {% endif %} tw-min-h-[390px]">
+
+    {% assign data = section.settings %}
+    {% assign image_class = 'tw-absolute tw-object-cover tw-inset-0 tw-h-full tw-w-full' %}
+
+    {% if data.image_mobile %}
+      {{ data.image_mobile | image_url: height: data.image_mobile.height | image_tag: class: 'tw-absolute tw-object-cover tw-inset-0 tw-h-full tw-w-full lg:tw-hidden' }}
+      {% assign image_class = image_class | append: ' tw-hidden lg:tw-block' %}
+    {% endif %}
+
+    {% if data.image %}
+      {{ data.image | image_url: height: 390 | image_tag: class: image_class }}
+    {% endif %}
+
+    <div class="tw-w-full page-width tw-relative tw-inset-0 tw-py-6 lg:tw-py-13 tw-text-white tw-z-[1]">
+      <span class="tw-flex tw-text-white tw-items-center tw-font-bold tw-text-text-sm  tw-uppercase tw-mb-14 lg:tw-mb-2">{% render 'icon-line'
+  , class: "tw-w-[64px] tw-h-auto" %}
+        <span class="tw-pl-2">{{ data.eyebrow }}</span>
+      </span>
+      <h1 class="tw-text-white tw-block tw-font-heading tw-text-text-lg md:tw-text-display-sm  tw-uppercase">{{ data.title }}</h1>
+      {% if data.description %}
+        <p class="tw-mt-2 lg:tw-mt-5 tw-max-w-5xl">{{ data.description }}</p>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Page banner",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "label": "Eyebrow"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "default": "t:sections.collection-list.settings.title.default",
+        "label": "t:sections.collection-list.settings.title.label"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "filter",
+        "label": "Use filter over image"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page banner"
+      }
+    ]
+  }
+{% endschema %}
