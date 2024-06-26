@@ -1,0 +1,157 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  <div class="page-width tw-grid lg:tw-grid-cols-3 tw-gap-y-3 lg:tw-gap-x-5">
+
+    {% assign image_blocks = section.blocks | where: 'type', 'image' %}
+    {% assign product_blocks = section.blocks | where: 'type', 'product' %}
+
+
+    {% if product_blocks %}
+      <div class="tw-space-y-3">
+        {% if section.settings.title %}
+          <h3 class="tw-font-bold tw-text-primary-500 tw-font-body tw-uppercase">{{ section.settings.title }}</h3>
+        {% endif %}
+        <div class="tw-space-y-2">
+          {% for block in product_blocks %}
+            <a href="{{block.settings.product.url}}" class="tw-group tw-relative hover:tw-bg-primary-500 hover:tw-text-white tw-p-2 tw-flex tw-border tw-border-neutral-500 tw-items-center">
+              <div class="group-hover:tw-bg-white tw-shrink-0">
+                {{ block.settings.product.featured_image | image_url: height: 110 | image_tag: class: 'tw-w-[100px] tw-h-auto tw-shrink-0' }}
+              </div>
+              <div class="tw-ml-2">
+                <span class="tw-text-text-xs tw-block tw-mb-1">{{ block.settings.product.vendor }}</span>
+                <h4 class="tw-mb-2 tw-text-text-md tw-text-primary-400 tw-font-medium group-hover:tw-text-white tw-font-body tw-tracking-normal">{{ block.settings.product.title }}</h4>
+                <span class="tw-text-text-xs tw-block tw-font-bold">{{ block.settings.product.price | money }}</span>
+              </div>
+
+
+            </a>
+          {% endfor %}
+        </div>
+        {% if section.settings.cta_label %}
+          <a href="{{section.settings.cta_url}}" class="tw-block tw-font-bold tw-text-primary-400 tw-uppercase">{{ section.settings.cta_label }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% for block in image_blocks %}
+      <a href="{{block.settings.url}}" class="scroll-trigger animate--slide-in tw-block tw-relative tw-group tw-overflow-hidden tw-transition-all tw-w-full  after:tw-absolute after:tw-inset-0 after:tw-bg-primary-700 after:tw-opacity-40">
+        {{ block.settings.image | image_url: width: 600 | image_tag: class: 'group-hover:tw-blur-sm group-hover:tw-scale-110 tw-duration-500 lg:tw-bloc tw-full tw-h-full tw-object-cover' }}
+
+
+        <div class="tw-absolute tw-bottom-0 tw-p-4 tw-text-white tw-max-w-5xl tw-flex tw-flex-col tw-z-[1] tw-uppercase">
+          <span class="tw-block tw-font-heading tw-text-text-lg">{{ block.settings.title }}</span>
+        </div>
+        {% render 'icon-right-arrow'
+          , class: 'tw-absolute tw-top-3 tw-z-[1] tw-right-3 tw-opacity-0 group-hover:tw-opacity-100 group-hover:-tw-rotate-45  tw-duration-500 tw-hidden lg:tw-block group-hover:tw-text-white ' %}
+      </a>
+    {% endfor %}
+  </div>
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Products Collection Grid",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "default": "t:sections.collection-list.settings.title.default",
+        "label": "t:sections.collection-list.settings.title.label"
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "cta_label",
+        "label": "Button label"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          }
+
+        ]
+      },
+      {
+        "type": "product",
+        "name": "Product",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Products Collection Grid"
+      }
+    ]
+  }
+{% endschema %}

@@ -3,22 +3,71 @@
     "main": {
       "type": "main-search",
       "settings": {
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "enable_filtering": true,
-        "enable_sorting": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
         "article_show_date": true,
         "article_show_author": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "columns_mobile": "1",
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
+    },
+    "product_collection_grid_CtgwfP": {
+      "type": "product-collection-grid",
+      "blocks": {
+        "image_iHyT9p": {
+          "type": "image",
+          "settings": {
+            "title": "Collegiate",
+            "image": "shopify:\/\/shop_images\/Banner_a31e7119-50f4-4b95-903b-ff9cadb2a29e.jpg",
+            "url": "shopify:\/\/collections\/college-campus-scarves"
+          }
+        },
+        "image_WDbXtK": {
+          "type": "image",
+          "settings": {
+            "title": "Brand Partnerships",
+            "image": "shopify:\/\/shop_images\/Banner.jpg",
+            "url": "shopify:\/\/pages\/partnerships"
+          }
+        },
+        "product_QqyG8W": {
+          "type": "product",
+          "settings": {
+            "product": "georgetown-campus-architecture-silk-scarf"
+          }
+        },
+        "product_raMqLU": {
+          "type": "product",
+          "settings": {
+            "product": "the-gtown-scarf"
+          }
+        }
+      },
+      "block_order": [
+        "image_iHyT9p",
+        "image_WDbXtK",
+        "product_QqyG8W",
+        "product_raMqLU"
+      ],
+      "settings": {
+        "title": "Popular Products",
+        "cta_url": "shopify:\/\/collections\/shop-all",
+        "cta_label": "Shop All",
+        "padding_top": 40,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "product_collection_grid_CtgwfP"
   ]
 }

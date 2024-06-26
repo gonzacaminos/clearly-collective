@@ -1,0 +1,15 @@
+.template-search {
+  h1 {
+    @apply tw-text-display-md tw-uppercase tw-text-primary-400 tw-text-left tw-leading-none tw-mb-5;
+  }
+  .template-search__search {
+    @apply tw-max-w-full;
+    .reset__button {
+      right: 14rem;
+    }
+  }
+}
+
+.predictive-search__item-heading {
+  @apply tw-font-body;
+}
