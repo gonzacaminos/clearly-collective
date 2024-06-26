@@ -14,7 +14,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient tw-bg-secondary-300">
+<div class="color-{{ section.settings.color_scheme }} gradient {% if section.settings.use_bg %} tw-bg-secondary-300 {% endif  %}">
   <div class="contact page-width section-{{ section.id }}-padding tw-grid lg:tw-grid-cols-2 tw-gap-y-5 lg:tw-gap-x-5">
     <div>
       {%- if section.settings.heading != blank -%}
@@ -140,10 +140,20 @@
             "label": "Custom Request"
           },
           {
-            "value": "PartnershiRequest",
+            "value": "PartnershipRequest",
             "label": "Partnership Request"
+          },
+          {
+            "value": "Mentorship",
+            "label": "Mentorship"
           }
         ]
+      },
+      {
+        "type": "checkbox",
+        "id": "use_bg",
+        "label": "Use background",
+        "default": true
       },
       {
         "type": "header",
