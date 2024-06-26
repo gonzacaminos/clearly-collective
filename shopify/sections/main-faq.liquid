@@ -1,0 +1,108 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-5">
+      {{ section.settings.heading }}
+    </h2>
+
+    <div class="tw-space-y-2">
+      {% for block in section.blocks %}
+        <details class="tw-bg-white tw-p-2 lg:tw-p-3 tw-border tw-border-neutral-500 tw-group faq">
+          <summary>
+            <div class="tw-font-bold tw-grid tw-grid-cols-12">
+              <span class="tw-col-span-10">
+                {{ block.settings.title }}
+              </span>
+              <span class="icon tw-col-span-2">
+                {% render 'icon-caret' %}</span>
+
+            </div>
+          </summary>
+          <div class="tw-mt-2">
+            {{ block.settings.description }}
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "FAQs",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "heading",
+        "default": "t:sections.contact-form.settings.title.default",
+        "label": "t:sections.contact-form.settings.title.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 104,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Content"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQs"
+      }
+    ]
+  }
+{% endschema %}

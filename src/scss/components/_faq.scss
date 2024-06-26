@@ -1,0 +1,16 @@
+.faq {
+  &[open] {
+    .icon svg {
+      @apply tw-rotate-180;
+    }
+  }
+
+  .icon {
+    svg {
+      width: 18px;
+      height: 18px;
+      top: calc(50% - 0.8rem);
+      right: 0.8rem;
+    }
+  }
+}

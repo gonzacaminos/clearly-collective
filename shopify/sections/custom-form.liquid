@@ -28,66 +28,79 @@
           {{ section.settings.description }}
         </p>
       {%- endif -%}
+
+      {% capture form_html %}
+        {%- form 'contact'
+          , id: section.settings.form_type
+          , class: contact_form_class -%}
+
+
+          <div>
+            <input
+              type="text"
+              name="contact[name]"
+              class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-2"
+              placeholder="Name"
+              required
+              id="name" />
+
+            <input
+              type="tel"
+              name="contact[phone]"
+              class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-2"
+              placeholder="Phone"
+              id="phone" />
+
+            <input
+              type="email"
+              name="contact[email]"
+              class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-2"
+              required
+              placeholder="Email"
+              id="email" />
+
+            <input
+              type="hidden"
+              name="contact[type]"
+              id="type"
+              value="{{section.settings.form_type}}" />
+            <textarea
+              name="contact[body]"
+              class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-5"
+              placeholder="Message"
+              required
+              id="message"
+              rows="6"></textarea>
+
+
+            <button type="submit" class="button button--primary tw-bg-primary-500 hover:tw-bg-secondary-500 tw-text-white hover:tw-text-primary-700 tw-uppercase">Send</button>
+
+            {%- if form.posted_successfully? -%}
+              <div class="tw-border tw-border-secondary-500 tw-mb-2 tw-bg-white tw-flex tw-mt-5">{% render 'icon-check' %}
+                <span class="tw-pl-3.5">{{ section.settings.success_message }}</span>
+              </div>
+            {%- elsif form.errors -%}
+              <div class="tw-border tw-border-secondary-500 tw-mb-2 tw-bg-white tw-flex tw-mt-5">
+                {% render 'icon-warning' %}
+                <span class="tw-pl-3.5">{{ section.settings.error_message }}</span>
+              </div>
+            {%- endif -%}
+
+          </div>
+        {%- endform -%}
+      {% endcapture %}
+      {% if section.settings.image %}
+        <div class="tw-mt-5">
+          {{ form_html }}
+        </div>
+      {% endif %}
     </div>
     <div>
-      {%- form 'contact'
-        , id: section.settings.form_type
-        , class: contact_form_class -%}
-
-
-        <div>
-          <input
-            type="text"
-            name="contact[name]"
-            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-2"
-            placeholder="Name"
-            required
-            id="name" />
-
-          <input
-            type="tel"
-            name="contact[phone]"
-            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-2"
-            placeholder="Phone"
-            id="phone" />
-
-          <input
-            type="email"
-            name="contact[email]"
-            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-2"
-            required
-            placeholder="Email"
-            id="email" />
-
-          <input
-            type="hidden"
-            name="contact[type]"
-            id="type"
-            value="{{section.settings.form_type}}" />
-          <textarea
-            name="contact[body]"
-            class="tw-bg-white tw-border tw-border-neutral-5 tw-px-2 tw-py-1.5 tw-w-full tw-text-neutral-300 tw-mb-5"
-            placeholder="Message"
-            required
-            id="message"
-            rows="6"></textarea>
-
-
-          <button type="submit" class="button button--primary tw-bg-primary-500 hover:tw-bg-secondary-500 tw-text-white hover:tw-text-primary-700 tw-uppercase">Send</button>
-
-          {%- if form.posted_successfully? -%}
-            <div class="tw-border tw-border-secondary-500 tw-mb-2 tw-bg-white tw-flex tw-mt-5">{% render 'icon-check' %}
-              <span class="tw-pl-3.5">{{ section.settings.success_message }}</span>
-            </div>
-          {%- elsif form.errors -%}
-            <div class="tw-border tw-border-secondary-500 tw-mb-2 tw-bg-white tw-flex tw-mt-5">
-              {% render 'icon-warning' %}
-              <span class="tw-pl-3.5">{{ section.settings.error_message }}</span>
-            </div>
-          {%- endif -%}
-
-        </div>
-      {%- endform -%}
+      {% unless section.settings.image %}
+        {{ form_html }}
+      {% else %}
+        {{ section.settings.image | image_url: width: image.width | image_tag }}
+      {% endunless %}
     </div>
 
 
@@ -125,6 +138,11 @@
         "id": "error_message",
         "label": "Error message",
         "default": "Something went wrong. Please try again later."
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
       },
       {
         "type": "select",
