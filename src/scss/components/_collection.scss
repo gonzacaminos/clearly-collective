@@ -17,4 +17,18 @@
       }
     }
   }
+
+  .pagination__item {
+    width: 40px;
+    height: 40px;
+    @apply tw-text-primary-700 tw-mr-1 tw-rounded-full tw-border tw-border-solid tw-border-primary-700 tw-flex tw-items-center tw-justify-center;
+
+    &:hover,
+    &.pagination__item--current {
+      @apply tw-bg-secondary-1000 tw-no-underline;
+      &::after {
+        content: none;
+      }
+    }
+  }
 }

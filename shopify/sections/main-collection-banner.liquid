@@ -12,7 +12,7 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding  page-width">
+<div class="section-{{ section.id }}-padding  page-width scroll-trigger animate--slide-in">
   <div class="collection-hero tw-flex tw-items-stretch tw-relative tw-group tw-overflow-hidden tw-transition-all tw-w-full  after:tw-absolute after:tw-inset-0 after:tw-bg-primary-700 after:tw-opacity-60 tw-min-h-[320px] {%  unless section.settings.show_collection_image %} no-image {% endunless %}">
 
     {% assign cover_image = collection.metafields.custom.cover_image %}
