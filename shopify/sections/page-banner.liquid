@@ -35,7 +35,7 @@
       </span>
       <h1 class="tw-text-white tw-block tw-font-heading tw-text-text-lg md:tw-text-display-sm  tw-uppercase">{{ data.title }}</h1>
       {% if data.description %}
-        <p class="tw-mt-2 lg:tw-mt-5 tw-max-w-5xl">{{ data.description }}</p>
+        <div class="tw-mt-2 lg:tw-mt-5 tw-max-w-5xl">{{ data.description }}</div>
       {% endif %}
     </div>
 
@@ -63,7 +63,7 @@
         "label": "t:sections.collection-list.settings.title.label"
       },
       {
-        "type": "inline_richtext",
+        "type": "richtext",
         "id": "description",
         "label": "Description"
       },
