@@ -25,7 +25,7 @@
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
     data-section-id="{{ section.id }}"
-    data-product-id="{{ product.id }}"
+    data-product-id="{{ product.id |  default: section.settings.product.id }}"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
@@ -64,6 +64,12 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Use this product to show recommendations"
+    },
     {
       "type": "paragraph",
       "content": "t:sections.related-products.settings.paragraph__1.content"
