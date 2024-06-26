@@ -13,3 +13,9 @@
 .predictive-search__item-heading {
   @apply tw-font-body;
 }
+
+.page-template-search {
+  .header__icon--search {
+    @apply tw-bg-secondary-1000 tw-text-primary-700;
+  }
+}
