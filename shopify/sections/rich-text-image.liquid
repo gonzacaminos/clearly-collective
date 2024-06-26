@@ -15,10 +15,23 @@
 
 <div class="section-{{ section.id }}-padding">
   <div class="page-width tw-grid lg:tw-grid-cols-2 tw-gap-y-5 lg:tw-gap-x-5">
-    <div class="tw-space-y-3 [&>h2]:tw-text-text-lg [&>h2]:!tw-font-body [&>h2]:tw-text-300">
-      {{ section.settings.description }}
+    <div class="{% if section.settings.reverse %} tw-order-2 {% endif %}">
 
-      {% if section.settings.cta_label %}
+      {% if section.settings.description != blank %}
+        <div class="tw-mb-5 tw-space-y-3 [&>h2]:tw-text-text-lg [&>h2]:!tw-font-body [&>h2]:tw-text-300">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+      <div class="tw-space-y-5">
+        {% for block in section.blocks %}
+          <div class="">
+            <h2 class="tw-text-text-lg tw-font-body tw-text-300 tw-font-bold tw-mb-2">{{ block.settings.title }}</h2>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      {% if section.settings.cta_label != blank %}
         <a class="button button--secondary tw-mt-5 !tw-px-2 lg:!tw-px-3" href="{{section.settings.cta_url}}">
           <span class="tw-text-secondary-1000 tw-pr-1">
             {% render 'icon-arrow'
@@ -64,6 +77,11 @@
         "label": "Button label"
       },
       {
+        "type": "checkbox",
+        "id": "reverse",
+        "label": "Reverse"
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -82,6 +100,25 @@
         "unit": "px",
         "label": "t:sections.all.padding.padding_bottom",
         "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "richtext",
+        "name": "Text",
+        "limit": 5,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "inline_richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
       }
     ],
     "presets": [
