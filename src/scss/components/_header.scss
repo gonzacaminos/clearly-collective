@@ -34,6 +34,9 @@
   grid-template-areas: "heading navigation icons";
   grid-template-columns: auto 1fr auto;
   column-gap: 2rem;
+  .header__heading-link {
+    margin-left: 0;
+  }
   @media screen and (max-width: 989px) {
     grid-template-areas: "heading icons navigation";
     column-gap: 0;
