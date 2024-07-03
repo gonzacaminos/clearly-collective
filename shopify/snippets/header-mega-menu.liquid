@@ -98,7 +98,7 @@
                 {% for mega_column in mega_columns %}
                   {% assign label = mega_column.settings.menu_label | downcase %}
                   {% if label == menu_label and mega_column.settings.title %}
-                    <div class="tw-py-[24px] tw-border-t tw-border-t-primary-400">
+                    <div class="tw-py-[24px] tw-border-t tw-border-t-[rgb(var(--color-border-general))]">
                       <div class="page-width-desktop">
                         <a href="{{mega_column.settings.link}}" class="mega-menu__link tw-uppercase tw-font-bold link !tw-p-0">{{ mega_column.settings.title }}</a>
                       </div>

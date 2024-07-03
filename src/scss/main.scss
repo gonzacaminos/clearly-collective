@@ -18,6 +18,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @import "./components/base";
 @import "./components/header";
 @import "./components/button";

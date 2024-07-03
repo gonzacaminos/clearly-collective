@@ -105,13 +105,16 @@ if (how_to_wear && how_to_wear_text) {
     perPage: 1,
     arrows: false,
     padding: { right: 50 },
+    autoplay: true,
+    interval: 3500,
+    rewind: true,
     breakpoints: {
       989: {
         padding: 0,
       },
     },
     gap: "16px",
-    speed: 600,
+    speed: 1200,
   }).mount();
 
   const how_to_wear_text_slider = new Splide(how_to_wear_text, {

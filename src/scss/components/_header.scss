@@ -72,6 +72,9 @@
   width: var(--header-icon-size);
   height: var(--header-icon-size);
   border-inline: 1px solid rgb(var(--color-border-general));
+  &:hover{
+    background: rgb(var(--color-border-general))
+  };
 }
 
 @media screen and (max-width: 989px) {
@@ -153,6 +156,7 @@ header .menu-drawer {
     font-size: 1.4rem;
   }
   .menu-drawer__close-button {
+    margin-top: 0;
     margin-bottom: 1.6rem;
     padding: 1.8rem 2.6rem 1.8rem 1.6rem;
     font-weight: bold;

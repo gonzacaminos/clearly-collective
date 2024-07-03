@@ -34,7 +34,7 @@
       {% endif %}
 
       {%- for partnership in partnerships.value -%}
-        <a href="{{shop.url}}{{partnership.system.url}}" class="tw-group tw-relative hover:tw-bg-primary-500 hover:tw-text-white tw-p-2 tw-flex tw-border tw-border-neutral-500 tw-items-center">
+        <a href="{{shop.url}}{{partnership.system.url}}" class="tw-group tw-relative hover:tw-bg-primary-500 hover:tw-text-white tw-p-2 tw-flex tw-border tw-border-neutral-500 tw-items-center tw-transition-all tw-duration-400">
           {% assign image = partnership.logo %}
           {% unless image %}
             {% assign image = images['Fallback_Brand.png'] %}
