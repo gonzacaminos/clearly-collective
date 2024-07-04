@@ -12,8 +12,7 @@
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "caption": {
           "type": "text",
@@ -24,8 +23,7 @@
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -36,8 +34,7 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -48,13 +45,12 @@
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "faq_link_BMHXVt": {
           "type": "faq_link",
           "settings": {
-            "text": "For more questions related to material care, <a href=\"\/pages\/contact-us-1\" title=\"Contact Us\"><strong>visit our FAQ section.<\/strong><\/a>"
+            "text": "For more questions related to material care, <a href=\"/pages/contact-us-1\" title=\"Contact Us\"><strong>visit our FAQ section.</strong></a>"
           }
         },
         "how_to_wear_mnAC3b": {
@@ -62,7 +58,7 @@
           "settings": {
             "title": "How to Wear",
             "description": "The possibilities are endless, but here's some inspiration.",
-            "image": "shopify:\/\/shop_images\/Group_1_2.jpg"
+            "image": "shopify://shop_images/Group_1_2.jpg"
           }
         }
       },
@@ -107,7 +103,7 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "padding_top": 104,
         "padding_bottom": 104
       }
