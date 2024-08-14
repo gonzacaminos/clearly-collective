@@ -5,9 +5,9 @@
       "settings": {
         "eyebrow": "BRAND PARTNERSHIPS",
         "title": "A bespoke brand journey",
-        "description": "For connoisseurs of unmatched quality and unparalleled attention to detail, our Black Label service is a testament to the zenith of design sophistication. For bespoke inquiries, please reach out directly to our dedicated team at:",
-        "image": "shopify:\/\/shop_images\/Header_1e75eb2f-0558-4084-9eec-4aa9c9e29d9c.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/Header_c38898aa-c377-4aed-b31c-4643d79bb2d6.jpg",
+        "description": "<p>For connoisseurs of unmatched quality and unparalleled attention to detail, our Black Label service is a testament to the zenith of design sophistication. For bespoke inquiries, please reach out directly to our dedicated team at:</p>",
+        "image": "shopify://shop_images/Header_1e75eb2f-0558-4084-9eec-4aa9c9e29d9c.jpg",
+        "image_mobile": "shopify://shop_images/Header_c38898aa-c377-4aed-b31c-4643d79bb2d6.jpg",
         "filter": false,
         "padding_top": 0,
         "padding_bottom": 0

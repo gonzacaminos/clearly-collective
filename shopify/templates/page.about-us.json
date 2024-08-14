@@ -5,9 +5,9 @@
       "settings": {
         "eyebrow": "ABOUT",
         "title": "The Clearly Collective.",
-        "description": "Founded on refined, eclectic, and community-centered design principles. Greetings and welcome to the Clearly Collective.",
-        "image": "shopify:\/\/shop_images\/Header.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/Header_1.jpg",
+        "description": "<p>Founded on refined, eclectic, and community-centered design principles. Greetings and welcome to the Clearly Collective.</p>",
+        "image": "shopify://shop_images/Header.jpg",
+        "image_mobile": "shopify://shop_images/Header_1.jpg",
         "filter": false,
         "padding_top": 0,
         "padding_bottom": 0
