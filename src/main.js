@@ -37,7 +37,7 @@ const carousels = document.querySelectorAll(".splide-slider");
 
 carousels.forEach((carousel) => {
   const data = carousel.dataset;
-  new Splide(carousel, {
+  const new_carousel = new Splide(carousel, {
     perPage: data?.perPage,
     padding: {
       left: parseInt(data?.paddingLeft || 0),
@@ -58,6 +58,20 @@ carousels.forEach((carousel) => {
       },
     },
   }).mount();
+
+  const inner_arrows = carousel.querySelector(".inner_arrows");
+  if (inner_arrows) {
+    carousel.querySelectorAll(".splide__arrow").forEach((arrow) => {
+      arrow.addEventListener("click", function () {
+        const role = arrow?.dataset?.role;
+        if (role === "next") {
+          new_carousel.go(">");
+        } else {
+          new_carousel.go("<");
+        }
+      });
+    });
+  }
 });
 
 const vertical_carousel = document.querySelector(
