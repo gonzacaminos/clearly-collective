@@ -50,6 +50,28 @@
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
+  {%  assign custom_request = null %}
+
+  {% if section.settings.custom_request_show %}
+    {%-  capture custom_request -%}
+      <div class="tw-mt-4">
+        {% if section.settings.custom_request_title != blank %}
+          <p class="tw-text-primary-600 tw-text-display-xs tw-font-heading tw-mb-2 tw-leading-none"> {{ section.settings.custom_request_title }} </p>
+        {% endif %}
+  
+        {% if section.settings.custom_request_desc != blank %}
+          <p> {{ section.settings.custom_request_desc }} </p>
+        {% endif %}
+  
+        {% if section.settings.custom_request_btn != blank %}
+          <a href="{{section.settings.custom_request_link}}" class="button button--secondary tw-mt-4">
+            {{ section.settings.custom_request_btn }}
+          </a>
+        {% endif %}
+      </div>
+    {%- endcapture -%}
+  {% endif %}
+
   {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
   {%- if first_3d_model -%}
     {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
@@ -73,7 +95,8 @@
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
-        {% render 'product-media-gallery', variant_images: variant_images %}
+        {% render 'product-media-gallery', variant_images: variant_images, custom_request: custom_request %}
+
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
@@ -665,7 +688,7 @@
                   <div class="tw-flex tw-relative tw-z-[1] tw-p-3">
                     {% render 'icon-question-mark' %}
                     <div class="tw-pl-[24px]">
-                      <p class="tw-font-heading tw-uppercase tw-text-[24px] tw-mb-1">{{ block.settings.title }}</p>
+                      <p class="tw-font-heading tw-uppercase tw-text-[24px] tw-leading-none tw-mb-1">{{ block.settings.title }}</p>
                       <p>{{ block.settings.description }}</p>
                     </div>
                   </div>
@@ -673,6 +696,13 @@
                 </a>
             {%- endcase -%}
           {%- endfor -%}
+
+          {% if custom_request %}
+            <div class="lg:tw-hidden">
+              {{ custom_request }}
+            </div>
+          {% endif %}
+
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
             {% render 'icon-arrow' %}
@@ -2275,6 +2305,36 @@
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
+    },
+    {
+      "type": "header",
+      "content": "Custom Requests"
+    },
+    {
+      "type": "checkbox",
+      "id": "custom_request_show",
+      "label" : "Show Custom Request",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "custom_request_title",
+      "label" : "Custom Request Title"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "custom_request_desc",
+      "label" : "Custom Request Description"
+    },
+    {
+      "type": "text",
+      "id": "custom_request_btn",
+      "label" : "Custom Request Button label"
+    },
+    {
+      "type": "url",
+      "id": "custom_request_link",
+      "label" : "Custom Request Link"
     },
     {
       "type": "header",

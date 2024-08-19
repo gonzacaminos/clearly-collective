@@ -315,4 +315,11 @@
       </button>
     </slider-component>
   {%- endif -%}
+
+  {% if custom_request %}
+    <div class="tw-hidden lg:tw-block">
+      {{ custom_request }}
+    </div>
+  {% endif %}
+
 </media-gallery>
