@@ -207,6 +207,21 @@
           "accent": "#ceaf87",
           "accent_alternative": "#d8be9f"
         }
+      },
+      "scheme-b9572135-aeb0-46ae-9398-2ca6e9cf9a0f": {
+        "settings": {
+          "background": "#353521",
+          "background_alternative": "#353521",
+          "background_gradient": "",
+          "text": "#b4b4aa",
+          "button": "#ffffff",
+          "button_label": "#334fb4",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212",
+          "border": "#686855",
+          "accent": "#ceaf87",
+          "accent_alternative": "#d8be9f"
+        }
       }
     }
   },
