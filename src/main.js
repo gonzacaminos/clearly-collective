@@ -140,14 +140,6 @@ if (how_to_wear && how_to_wear_text) {
   }).mount();
 
   how_to_wear_slider.on("move", (e) => {
-    console.log(e);
     how_to_wear_text_slider.go(e);
   });
 }
-
-// new Ajaxinate({
-//   container: '#AjaxinateContainer',
-//   pagination: '#AjaxinatePagination',
-//   loadingText: 'Loading more...',
-//   method: 'click'
-// });

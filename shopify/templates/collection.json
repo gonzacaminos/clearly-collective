@@ -21,10 +21,19 @@
             "description": "The possibilities are endless, but here's some inspiration.",
             "image": "shopify:\/\/shop_images\/Group_1_2.jpg"
           }
+        },
+        "custom_request_PrpnUk": {
+          "type": "custom-request",
+          "settings": {
+            "text": "CUSTOM REQUESTS",
+            "url": "shopify:\/\/pages\/partnerships",
+            "subtitle": "For orders of 10+ you can add personalized touches for free."
+          }
         }
       },
       "block_order": [
-        "how_to_wear_NcgDFR"
+        "how_to_wear_NcgDFR",
+        "custom_request_PrpnUk"
       ],
       "settings": {
         "products_per_page": 16,
@@ -60,6 +69,7 @@
         "success_message": "Message sent. I'll get in touch with you soon!",
         "error_message": "Something went wrong. Please try again later.",
         "form_type": "Contact",
+        "use_bg": true,
         "padding_top": 100,
         "padding_bottom": 100
       }

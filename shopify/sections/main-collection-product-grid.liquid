@@ -106,6 +106,7 @@
             , filter_type: section.settings.filter_type
             , paginate: paginate
           %}
+          {% assign custom_request_anchor = null %}
           {% if section.blocks.size > 0 %}
             {% for block in section.blocks %}
               {% if block.type == 'how-to-wear' %}
@@ -116,6 +117,22 @@
                   </div>
                   {{ block.settings.image | image_url: width: 290 | image_tag: class: 'tw-absolute tw-inset-0 tw-object-cover tw-w-full tw-h-full' }}
                 </a>
+              {% else if block.type == 'custom-request' %}
+                {%- capture custom_request_anchor -%}
+                  <div>
+                    <a href="{{block.settings.url}}" class="button button--secondary tw-w-full tw-mb-1">
+                      {{ block.settings.text }}
+                    </a>
+                    {% if block.settings.subtitle != blank %}
+                      <p>
+                        {{ block.settings.subtitle }}
+                      </p>
+                    {% endif %}
+                  </div>
+                {%- endcapture -%}
+                <div class="tw-mt-5 tw-hidden lg:tw-block">
+                  {{ custom_request_anchor }}
+                </div>
               {% endif %}
             {% endfor %}
           {% endif %}
@@ -191,6 +208,10 @@
             {%- endif -%}
           </div>
         {%- endif -%}
+      </div>
+
+      <div class="lg:tw-hidden tw-mt-8">
+        {{ custom_request_anchor }}
       </div>
     </div>
   {%- endpaginate -%}
@@ -437,6 +458,28 @@
             "type": "image_picker",
             "id": "image",
             "label": "Image"
+          }
+        ]
+      },
+      {
+        "type": "custom-request",
+        "name": "Custom Requests Anchor",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Button Link"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle"
           }
         ]
       }
