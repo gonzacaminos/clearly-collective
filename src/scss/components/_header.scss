@@ -179,3 +179,24 @@ header .mega-menu__content {
 .header__active-menu-item {
   text-decoration: none;
 }
+
+.page-template-index  {
+  .section-header  {
+    sticky-header {
+      top: 0;
+      position: absolute;
+      inset-inline: 0;
+      background: transparent;
+      transition: all 0.15s ease-out;
+    }
+  
+    &.shopify-section-header-sticky sticky-header, &.mega-menu-open sticky-header  {
+      background: var(--gradient-background);
+    }
+  
+    &.shopify-section-header-hidden sticky-header {
+      top: calc(-1* 100px);
+      transition: all 0.15s ease-out;
+    }
+  }
+}

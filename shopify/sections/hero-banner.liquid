@@ -1,0 +1,86 @@
+{% assign mobile_image = section.settings.mobile_image %}
+
+<section class="tw-min-h-screen tw-max-h-screen tw-overflow-hidden tw-text-center tw-relative tw-flex tw-items-center tw-justify-center">
+  {% if section.settings.image %}
+    <img
+      src="{{ section.settings.image | image_url: image.width }}"
+      alt="{{ section.settings.title }}"
+      class="tw-w-full tw-h-full tw-min-h-screen tw-object-cover {% if mobile_image %} tw-hidden md:tw-block {% else %} tw-block {% endif %}">
+  {% endif %}
+
+  {% if mobile_image %}
+    <img
+      src="{{ section.settings.mobile_image | image_url: image.width }}"
+      alt="{{ section.settings.title }} Mobile"
+      class="tw-w-full tw-h-full tw-min-h-screen tw-object-cover md:tw-hidden">
+  {% endif %}
+
+  <div class="tw-p-2 tw-absolute tw-text-white">
+    {% if section.settings.title %}
+      <h2 class="tw-text-white tw-text-display-md md:tw-text-display-lg tw-font-heading tw-leading-tight md:tw-leading-normal mb-1">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.subtitle %}
+      <p class="md:tw-text-text-md tw-max-w-7xl tw-mx-auto">{{ section.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+  {% if section.settings.scroll_text != blank %}
+    <footer class="tw-hidden md:tw-flex tw-justify-center tw-items-center tw-flex-col tw-mt-auto tw-absolute tw-inset-x-0 tw-bottom-0">
+      <p class="tw-text-primary-200 tw-mb-1">{{ section.settings.scroll_text }}</p>
+      <svg
+        width="2"
+        height="41"
+        viewBox="0 0 2 41"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1 1V41"
+          stroke="#686855"
+          stroke-linecap="round" />
+      </svg>
+    </footer>
+  {% endif %}
+</section>
+
+
+{% schema %}
+  {
+    "name": "Hero Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Your Title Here"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Your Subtitle Here"
+      },
+      {
+        "type": "text",
+        "id": "scroll_text",
+        "label": "Scroll Text",
+        "default": "SCROLL DOWN",
+        "info": "Leave empty to hide"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Banner",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

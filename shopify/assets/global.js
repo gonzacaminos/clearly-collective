@@ -77,7 +77,11 @@ document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
   }
 
   summary.addEventListener('click', (event) => {
-    event.currentTarget.setAttribute('aria-expanded', !event.currentTarget.closest('details').hasAttribute('open'));
+    const isOpen = !event.currentTarget.closest('details').hasAttribute('open');
+    event.currentTarget.setAttribute('aria-expanded', isOpen);
+    if(summary.classList.contains('header__menu-item')){
+      document.querySelector('.section-header.shopify-section').classList.toggle('mega-menu-open', isOpen)
+    }
   });
 
   if (summary.closest('header-drawer, menu-drawer')) return;

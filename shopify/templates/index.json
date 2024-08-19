@@ -1,5 +1,15 @@
 {
   "sections": {
+    "hero_banner_BDgqkp": {
+      "type": "hero-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_2609720_e0643a36-ed1a-41fe-b417-32297c9b9998.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Banner_49c2b4d6-95e0-4f39-a165-6146eafed57c.jpg",
+        "title": "THE CLEARLY COLLECTIVE",
+        "subtitle": "Welcome to the Clearly Collective. <strong>We make art - not logos.<\/strong> We base our design in storytelling for brands, locations & collegiate campus's",
+        "scroll_text": "SCROLL DOWN"
+      }
+    },
     "featured_collection_RtGL9A": {
       "type": "featured-collection",
       "settings": {
@@ -240,6 +250,7 @@
     }
   },
   "order": [
+    "hero_banner_BDgqkp",
     "featured_collection_RtGL9A",
     "hero_banner_RnYACY",
     "separator_pG4DEV",
