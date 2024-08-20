@@ -13,9 +13,9 @@
     }
   }
 {%- endstyle -%}
-
+<div style="background-color: {{section.settings.color}};" class="custom_form use-dark--{{section.settings.use_dark}}">
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+  <div class="rich-text content-container {% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
     <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
       <div class="rich-text__blocks {{ section.settings.content_alignment }}">
         {%- for block in section.blocks -%}
@@ -93,12 +93,13 @@
     </div>
   </div>
 </div>
+</div>
 
 {% schema %}
 {
   "name": "t:sections.rich-text.name",
   "tag": "section",
-  "class": "section",
+  "class": "section richtext_section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -145,10 +146,14 @@
       "label": "t:sections.rich-text.settings.content_alignment.label"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "type": "color",
+      "id": "color",
+      "label": "Background color"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_dark",
+      "label": "Use dark mode"
     },
     {
       "type": "checkbox",
