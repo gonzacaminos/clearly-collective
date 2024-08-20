@@ -1,0 +1,13 @@
+.custom_form {
+    &.use-dark--true {
+        color: white;
+
+        h2 {
+            @apply tw-text-secondary-800;
+        }
+
+        input,textarea {
+            @apply tw-bg-primary-600 tw-border-primary-400 tw-text-white;
+        }
+    }
+}

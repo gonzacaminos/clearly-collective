@@ -13,7 +13,7 @@
 {%- endstyle -%}
 
 
-<div class="section-{{ section.id }}-padding">
+<div class="section-{{ section.id }}-padding  use-dark--{{section.settings.use_dark}}" style="background-color: {{section.settings.color}};">
   <div class="page-width tw-grid lg:tw-grid-cols-2 tw-gap-y-5 lg:tw-gap-x-5">
     <div class="{% if section.settings.reverse %} tw-order-2 {% endif %}">
 
@@ -51,7 +51,7 @@
   {
     "name": "Rich Text Image",
     "tag": "section",
-    "class": "section",
+    "class": "section  rich_text_image_section",
     "disabled_on": {
       "groups": ["header", "footer"]
     },
@@ -80,6 +80,16 @@
         "type": "checkbox",
         "id": "reverse",
         "label": "Reverse"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Background color"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_dark",
+        "label": "Use dark mode"
       },
       {
         "type": "range",

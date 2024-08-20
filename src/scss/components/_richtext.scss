@@ -7,3 +7,12 @@
     }
   }
 }
+
+.rich_text_image_section {
+  .use-dark--true {
+    color: white;
+    h2 {
+      @apply tw-text-secondary-800;
+    }
+  }
+}

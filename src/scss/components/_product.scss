@@ -54,3 +54,30 @@ product-recommendations {
     @apply tw-mb-4;
   }
 }
+.related_products_section {
+  .use-dark--true {
+
+    @apply tw-border-y tw-border-solid tw-border-primary-400;
+    
+    product-recommendations {
+      @apply tw-border-0;
+  
+      .card__content {
+        @apply tw-text-primary-200;
+        h3 {
+          @apply tw-text-secondary-1000;
+  
+        }
+  
+        .card-information .price {
+          @apply tw-text-primary-200;
+        }
+  
+      }
+  
+      .related-products__heading {
+        @apply tw-text-secondary-1000
+      }
+    }
+  }
+}

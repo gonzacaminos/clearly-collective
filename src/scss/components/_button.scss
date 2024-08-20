@@ -24,3 +24,8 @@
 .button.button--primary {
   @apply tw-bg-primary-500 tw-border tw-border-solid tw-border-primary-500 tw-text-white hover:tw-bg-secondary-500 hover:tw-text-primary-700 hover:tw-border-secondary-500 tw-uppercase;
 }
+
+
+.button.button--primary-light {
+  @apply tw-bg-secondary-1000 tw-border tw-border-solid tw-border-secondary-1000 tw-text-primary-500 hover:tw-bg-secondary-200 hover:tw-text-primary-500 hover:tw-border-secondary-200 tw-uppercase;
+}
