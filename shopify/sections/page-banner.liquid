@@ -28,15 +28,24 @@
       {{ data.image | image_url: height: 390 | image_tag: class: image_class }}
     {% endif %}
 
-    <div class="tw-w-full page-width tw-relative tw-inset-0 tw-py-6 lg:tw-py-13 tw-text-white tw-z-[1]">
-      <span class="tw-flex tw-text-white tw-items-center tw-font-bold tw-text-text-sm  tw-uppercase tw-mb-14 lg:tw-mb-2">{% render 'icon-line'
-  , class: "tw-w-[64px] tw-h-auto" %}
-        <span class="tw-pl-2">{{ data.eyebrow }}</span>
-      </span>
-      <h1 class="tw-text-white tw-block tw-font-heading tw-text-text-lg md:tw-text-display-sm  tw-uppercase">{{ data.title }}</h1>
-      {% if data.description %}
-        <div class="tw-mt-2 lg:tw-mt-5 tw-max-w-5xl">{{ data.description }}</div>
-      {% endif %}
+    <div class="tw-w-full page-width tw-relative tw-inset-0 tw-py-6 lg:tw-py-13 tw-text-white tw-z-[1] tw-grid lg:tw-grid-cols-3">
+      <div class="lg:tw-col-span-2">
+        <span class="tw-flex tw-text-white tw-items-center tw-font-bold tw-text-text-sm  tw-uppercase tw-mb-14 lg:tw-mb-2">{% render 'icon-line'
+    , class: "tw-w-[64px] tw-h-auto" %}
+          <span class="tw-pl-2">{{ data.eyebrow }}</span>
+        </span>
+        <h1 class="tw-text-secondary-1000 tw-block tw-font-heading tw-text-display-sm md:tw-text-display-md  tw-uppercase">{{ data.title }}</h1>
+        {% if data.description %}
+          <div class="tw-mt-2 lg:tw-mt-5 tw-max-w-5xl">{{ data.description }}</div>
+        {% endif %}
+      </div>
+      <div class="lg:tw-flex tw-items-end tw-justify-end tw-mt-2 md:tw-mt-0">
+        {% if section.settings.cta_text != blank %}
+          <a href="{{section.settings.cta_link}}" class="button button-primary tw-bg-secondary-1000 tw-text-primary-500 hover:tw-bg-secondary-200 tw-w-full md:tw-w-fit">
+            {{ section.settings.cta_text  }}
+          </a>
+        {% endif %}
+      </div>
     </div>
 
   </div>
@@ -76,6 +85,17 @@
         "type": "image_picker",
         "id": "image_mobile",
         "label": "Mobile Image"
+      },
+      {
+        "type": "text",
+        "label": "Button Text",
+        "id": "cta_text",
+        "info": "Leave empty to hide"
+      },
+      {
+        "type": "url",
+        "label": "Button Link",
+        "id": "cta_link"
       },
       {
         "type": "checkbox",

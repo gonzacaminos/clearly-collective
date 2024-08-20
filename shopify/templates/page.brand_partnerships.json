@@ -5,9 +5,11 @@
       "settings": {
         "eyebrow": "BRAND PARTNERSHIPS",
         "title": "A bespoke brand journey",
-        "description": "<p>For connoisseurs of unmatched quality and unparalleled attention to detail, our Black Label service is a testament to the zenith of design sophistication. For bespoke inquiries, please reach out directly to our dedicated team at:</p>",
-        "image": "shopify://shop_images/Header_1e75eb2f-0558-4084-9eec-4aa9c9e29d9c.jpg",
-        "image_mobile": "shopify://shop_images/Header_c38898aa-c377-4aed-b31c-4643d79bb2d6.jpg",
+        "description": "<p>For connoisseurs of unmatched quality and unparalleled attention to detail, our Black Label service is a testament to the zenith of design sophistication. For bespoke inquiries, please reach out directly to our dedicated team at:<\/p>",
+        "image": "shopify:\/\/shop_images\/Header_1e75eb2f-0558-4084-9eec-4aa9c9e29d9c.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Header_c38898aa-c377-4aed-b31c-4643d79bb2d6.jpg",
+        "cta_text": "INQUIRE HERE",
+        "cta_link": "shopify:\/\/pages\/contact-us-1",
         "filter": false,
         "padding_top": 0,
         "padding_bottom": 0
@@ -19,7 +21,7 @@
         "text_PxCDM4": {
           "type": "text",
           "settings": {
-            "text": "<p>At The Clearly Collective, our designs are more than just patterns on silk; they are a symphony of narratives that tell the tale of your brand, embodying its very essence in a manner that is nothing short of mesmerizing. We offer more than a mere transaction; we invite you into an exclusive collaboration. Trust in our expertise to illuminate your brand's values, translating them through the refined art of design and the eloquence of storytelling. Our commitment goes beyond creation; we advocate, adorn, and articulate your brand, nurturing a profound bond between your clientele and your brand's philosophy.<\/p>"
+            "text": "<p>At The Clearly Collective, our designs are more than just patterns on silk; they are a symphony of narratives that tell the tale of your brand, embodying its very essence in a manner that is nothing short of mesmerizing. We offer more than a mere transaction; we invite you into an exclusive collaboration.<\/p><p>Trust in our expertise to illuminate your brand's values, translating them through the refined art of design and the eloquence of storytelling. Our commitment goes beyond creation; we advocate, adorn, and articulate your brand, nurturing a profound bond between your clientele and your brand's philosophy.<\/p>"
           }
         }
       },
@@ -72,7 +74,9 @@
         "full_width": false,
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
-        "show_text_below": true
+        "show_text_below": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "brand_partnerships_list_TdPpHj": {

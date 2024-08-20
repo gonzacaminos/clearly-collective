@@ -8,6 +8,8 @@
         "description": "<p>Founded on refined, eclectic, and community-centered design principles. Greetings and welcome to the Clearly Collective.<\/p>",
         "image": "shopify:\/\/shop_images\/Header_95248e14-6e43-4dc7-8714-1db58bc82c41.jpg",
         "image_mobile": "shopify:\/\/shop_images\/Header_9bac415a-2078-47ba-a96c-e357823e4c10.jpg",
+        "cta_text": "INQUIRE HERE",
+        "cta_link": "shopify:\/\/pages\/contact-us-1",
         "filter": false,
         "padding_top": 0,
         "padding_bottom": 0
