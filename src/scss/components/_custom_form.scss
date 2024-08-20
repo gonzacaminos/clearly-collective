@@ -9,5 +9,13 @@
         input,textarea {
             @apply tw-bg-primary-600 tw-border-primary-400 tw-text-white;
         }
+
+        .success_message,.error_message {
+            @apply tw-bg-primary-700;
+        }
+
+        .error_message {
+
+        }
     }
 }

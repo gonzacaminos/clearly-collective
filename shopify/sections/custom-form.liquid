@@ -75,12 +75,12 @@
 
             <button type="submit" class="button {{section.settings.btn_style}} tw-uppercase">Send</button>
 
-            {%- if form.posted_successfully? -%}
-              <div class="tw-border tw-border-secondary-500 tw-mb-2 tw-p-2 tw-flex tw-mt-5">{% render 'icon-check' %}
+            {%- if form.posted_successfully?  -%}
+              <div class="success_message tw-border tw-border-secondary-500 tw-mb-2 tw-p-2 tw-flex tw-mt-5">{% render 'icon-check' %}
                 <span class="tw-pl-2">{{ section.settings.success_message }}</span>
               </div>
             {%- elsif form.errors -%}
-              <div class="tw-border tw-border-secondary-500 tw-mb-2 tw-p-2 tw-flex tw-mt-5">
+              <div class="error_message tw-border tw-border-secondary-500 tw-mb-2 tw-p-2 tw-flex tw-mt-5">
                 {% render 'icon-warning' %}
                 <span class="tw-pl-2">{{ section.settings.error_message }}</span>
               </div>
