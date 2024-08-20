@@ -1,0 +1,30 @@
+.brand_partnerships_list {
+    .use-dark--true {
+        @apply tw-text-white tw-border-b tw-border-solid tw-border-primary-400;
+
+        h2 {
+            @apply tw-text-secondary-1000;
+        }
+
+        .brand_link {
+            @apply tw-bg-primary-500 tw-border-0 hover:tw-bg-primary-400;
+
+            
+            h3 {
+                @apply  tw-text-primary-550;
+            }
+
+
+            &:hover {
+                h3 {
+                    @apply  tw-text-white;
+                }
+            }
+
+            .brand_image_wrapper {
+                @apply tw-bg-white
+            }
+
+        }
+    }
+}

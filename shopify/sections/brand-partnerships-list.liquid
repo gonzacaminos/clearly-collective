@@ -12,7 +12,7 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding">
+<div class="section-{{ section.id }}-padding use-dark--{{section.settings.use_dark}}"  style="background-color: {{section.settings.color}};">
   <div class="tw-space-y-5">
     <div class="page-width">
       <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-2 lg:tw-text-center">
@@ -34,12 +34,12 @@
       {% endif %}
 
       {%- for partnership in partnerships.value -%}
-        <a href="{{shop.url}}{{partnership.system.url}}" class="tw-group tw-relative hover:tw-bg-primary-500 hover:tw-text-white tw-p-2 tw-flex tw-border tw-border-neutral-500 tw-items-center tw-transition-all tw-duration-400">
+        <a href="{{shop.url}}{{partnership.system.url}}" class="brand_link tw-group tw-relative hover:tw-bg-primary-500 hover:tw-text-white tw-p-2 tw-flex tw-border tw-border-neutral-500 tw-items-center tw-transition-all tw-duration-400">
           {% assign image = partnership.logo %}
           {% unless image %}
             {% assign image = images['Fallback_Brand.png'] %}
           {% endunless %}
-          <div class="group-hover:tw-bg-white tw-shrink-0">
+          <div class="brand_image_wrapper tw-p-1 group-hover:tw-bg-white tw-shrink-0">
             {{ image | image_url: height: 80 | image_tag: class: 'tw-w-[72px] tw-h-auto tw-shrink-0' }}
           </div>
 
@@ -59,7 +59,7 @@
   {
     "name": "Brand Partnerships List",
     "tag": "section",
-    "class": "section",
+    "class": "section brand_partnerships_list",
     "disabled_on": {
       "groups": ["header", "footer"]
     },
@@ -80,6 +80,16 @@
         "id": "partnerships_data",
         "label": "Partnerships List, handle",
         "info": "Enter the list *handle*. Check your options [here](https://admin.shopify.com/store/the-clearly-collective/content/metaobjects/entries/partnerships_list)"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Background color"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_dark",
+        "label": "Use dark mode"
       },
       {
         "type": "range",
