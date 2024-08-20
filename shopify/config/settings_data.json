@@ -180,22 +180,7 @@
       },
       "scheme-4": {
         "settings": {
-          "background": "#121212",
-          "background_alternative": "#000000",
-          "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#121212",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#121212",
-          "border": "#121212",
-          "accent": "#121212",
-          "accent_alternative": "#d8be9f"
-        }
-      },
-      "scheme-5": {
-        "settings": {
-          "background": "#43432a",
+          "background": "#353521",
           "background_alternative": "#353521",
           "background_gradient": "",
           "text": "#b4b4aa",
@@ -208,9 +193,9 @@
           "accent_alternative": "#d8be9f"
         }
       },
-      "scheme-b9572135-aeb0-46ae-9398-2ca6e9cf9a0f": {
+      "scheme-5": {
         "settings": {
-          "background": "#353521",
+          "background": "#43432a",
           "background_alternative": "#353521",
           "background_gradient": "",
           "text": "#b4b4aa",
