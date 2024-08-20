@@ -20,7 +20,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+<div class="use-dark--{{section.settings.use_dark}}" style="background-color: {{section.settings.color}};">
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
@@ -62,7 +62,7 @@
 {
   "name": "t:sections.related-products.name",
   "tag": "section",
-  "class": "section",
+  "class": "section related_products_section",
   "settings": [
     {
       "type": "product",
@@ -127,11 +127,14 @@
       "label": "t:sections.related-products.settings.columns_desktop.label"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info",
-      "default": "scheme-1"
+      "type": "color",
+      "id": "color",
+      "label": "Background color"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_dark",
+      "label": "Use Dark mode"
     },
     {
       "type": "header",
