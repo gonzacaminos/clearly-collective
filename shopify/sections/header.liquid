@@ -131,7 +131,7 @@
 -%}
 
 {% assign color_scheme =  section.settings.color_scheme %}
-{% if template == 'index' %}
+{% if template == 'index' or  page.metafields.custom.dark_mode %}
   {% assign color_scheme =  section.settings.color_scheme_home %}
 {% endif %}
 
@@ -158,8 +158,11 @@
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
     -%}
-
+    
     {%  assign logo = settings.logo_alternative %}
+    {%- if request.page_type == 'index' or page.metafields.custom.dark_mode  -%}
+      {%  assign logo = settings.logo %}
+    {%- endif -%}
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         {%  assign logo = settings.logo %}
