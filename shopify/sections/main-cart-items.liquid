@@ -25,7 +25,7 @@
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
-<cart-items class="cart-page gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
+<cart-items class="cart-page gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty tw-mb-8 {% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
     <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title_page' | t }}</h1>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="cart__warnings">
-      <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
+      <h1 class="cart__empty-text tw-text-display-sm">{{ 'sections.cart.empty' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="button">
         {{ 'general.continue_shopping' | t }}
       </a>
@@ -61,7 +61,7 @@
                   <th class="caption-with-letter-spacing" colspan="2" scope="col">
                     {{ 'sections.cart.headings.product' | t }}
                   </th>
-                  <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                  <th class="medium-hide large-up-hide right caption-with-letter-spacing total_mobile" colspan="1" scope="col">
                     {{ 'sections.cart.headings.total' | t }}
                   </th>
                   <th
