@@ -3,23 +3,27 @@
     "custom_form_rK4H9k": {
       "type": "custom-form",
       "settings": {
-        "heading": "Contact",
+        "heading": "CONTACT & CUSTOM REQUESTS",
         "description": "Have more questions? Feel free to contact us below and we'll get in touch as soon as we can.",
         "success_message": "Message sent. I'll get in touch with you soon!",
         "error_message": "Something went wrong. Please try again later.",
         "image": "shopify:\/\/shop_images\/Image_ab833ef6-ed65-486c-a6dd-e3bd91796194.jpg",
         "form_type": "Contact",
-        "use_bg": false,
+        "color": "#353521",
+        "use_dark": true,
+        "btn_style": "button--primary",
         "padding_top": 80,
-        "padding_bottom": 0
+        "padding_bottom": 80
       }
     },
     "separator_QLNwFh": {
       "type": "separator",
       "settings": {
         "orientation": "regular",
-        "padding_top": 80,
-        "padding_bottom": 64
+        "color": "#686855",
+        "background_color": "#353521",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "main_faq_VbFkCD": {
@@ -54,27 +58,36 @@
       ],
       "settings": {
         "heading": "FAQ",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "color": "#353521",
+        "use_dark": true,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "separator_GNWDUR": {
       "type": "separator",
       "settings": {
         "orientation": "tw-rotate-180",
-        "padding_top": 64,
-        "padding_bottom": 0
+        "color": "#686855",
+        "background_color": "#353521",
+        "padding_top": 0,
+        "padding_bottom": 40
       }
     },
     "custom_form_hK4H9k": {
       "type": "custom-form",
+      "custom_css": [
+        ".custom_form {border-top: 1px solid #686855;}"
+      ],
       "settings": {
         "heading": "Custom Requests",
         "description": "Initial consultation is always free. For more information regarding pricing and minimums, please visit our FAQ page",
         "success_message": "Message sent. I'll get in touch with you soon!",
         "error_message": "Something went wrong. Please try again later.",
         "form_type": "CustomRequest",
-        "use_bg": false,
+        "color": "#43432a",
+        "use_dark": true,
+        "btn_style": "button--primary-light",
         "padding_top": 104,
         "padding_bottom": 104
       }

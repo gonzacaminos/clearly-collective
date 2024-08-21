@@ -12,7 +12,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+<div class="use-dark--{{section.settings.use_dark}}" style="background-color: {{section.settings.color}};">
   <div class="page-width section-{{ section.id }}-padding">
     <h2 id="SectionHeading-{{ section.id }}" class="scroll-trigger animate--slide-in tw-font-heading tw-text-display-sm tw-uppercase tw-mb-5">
       {{ section.settings.heading }}
@@ -45,7 +45,7 @@
   {
     "name": "FAQs",
     "tag": "section",
-    "class": "section",
+    "class": "section faq_section",
     "disabled_on": {
       "groups": ["header", "footer"]
     },
@@ -59,6 +59,16 @@
       {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Background color"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_dark",
+        "label": "Use dark mode"
       },
       {
         "type": "range",
