@@ -10,6 +10,15 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .section-{{ section.id }}-padding path {
+    fill: {{section.settings.color}}
+  }
+
+  .section-{{ section.id }}-padding {
+    background-color: {{section.settings.background_color}}
+  }
+
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding">
@@ -41,6 +50,17 @@
             "label": "Bottom"
           }
         ]
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Color",
+        "default": "#E6D6C2"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color"
       },
       {
         "type": "range",
