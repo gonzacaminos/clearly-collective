@@ -51,7 +51,7 @@
 product-recommendations {
   @apply tw-border-y tw-border-y-secondary-400;
   .related-products__heading {
-    @apply tw-mb-4;
+   
   }
 }
 .related_products_section {
@@ -76,8 +76,12 @@ product-recommendations {
       }
   
       .related-products__heading {
-        @apply tw-text-secondary-1000
+        @apply tw-text-secondary-1000;
       }
+    }
+
+    .button {
+      @apply tw-border-primary-400  tw-text-secondary-1000 hover:tw-bg-secondary-1000 hover:tw-text-primary-600
     }
   }
 }

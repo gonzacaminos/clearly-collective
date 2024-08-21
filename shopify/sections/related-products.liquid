@@ -20,6 +20,17 @@
   }
 {%- endstyle -%}
 
+{%- if section.settings.view_all_text != blank -%}
+  {%  capture view_all_button %}
+      <a
+      href="{{ section.settings.view_all_url }}"
+      class="tw-uppercase tw-w-full md:tw-w-fit button button--tertiary-dark"
+    >
+      {{ section.settings.view_all_text }}
+    </a>
+  {% endcapture %}
+{%- endif -%}
+
 <div class="use-dark--{{section.settings.use_dark}}" style="background-color: {{section.settings.color}};">
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -28,9 +39,15 @@
     data-product-id="{{ product.id |  default: section.settings.product.id }}"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
-      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading }}
-      </h2>
+      <header class="tw-flex tw-justify-between tw-items-center tw-mb-4">
+        <h2 class="related-products__heading inline-richtext !tw-mb-0 {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+        <div class="tw-hidden lg:tw-block">
+          {{ view_all_button  }}
+        </div>
+      </header>
+      
       <ul
         class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
         role="list"
@@ -51,6 +68,9 @@
           {%- assign skip_card_product_styles = true -%}
         {% endfor %}
       </ul>
+        <div class="tw-block lg:tw-hidden tw-mt-6">
+          {{ view_all_button  }}
+        </div>
     {% endif %}
   </product-recommendations>
   {% if section.settings.image_shape == 'arch' %}
@@ -135,6 +155,18 @@
       "type": "checkbox",
       "id": "use_dark",
       "label": "Use Dark mode"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View all label",
+      "info": "Leave empty to hide",
+      "default": "View All"
+    },
+    {
+      "type": "url",
+      "id": "view_all_url",
+      "label": "View all link"
     },
     {
       "type": "header",
