@@ -6,7 +6,7 @@
 {% endcomment %}
 
 {% assign menu_color_scheme = section.settings.menu_color_scheme %}
-{% if template == 'index' or page.metafields.custom.dark_mode  %}
+{% if request.page_type == 'index' or request.page_type == 'metaobject' or page.metafields.custom.dark_mode  %}
   {% assign menu_color_scheme = section.settings.menu_color_scheme_home %}
 {% endif %}
 
