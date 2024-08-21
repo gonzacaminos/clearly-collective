@@ -14,5 +14,9 @@
     h2 {
       @apply tw-text-secondary-800;
     }
+
+    .button {
+      @apply tw-bg-transparent tw-text-secondary-1000 tw-border-primary-400 hover:tw-bg-white hover:tw-text-primary-500
+    }
   }
 }

@@ -7,6 +7,8 @@
         "title": "{{ metaobject.title.value }}",
         "description": "<p>{{ metaobject.short_description | metafield_tag }}<\/p>",
         "image": "{{ metaobject.cover_image.value }}",
+        "cta_text": "",
+        "cta_link": "",
         "filter": false,
         "padding_top": 0,
         "padding_bottom": 0
@@ -19,32 +21,44 @@
         "image": "{{ metaobject.extra_image.value }}",
         "cta_url": "shopify:\/\/pages\/partnerships",
         "cta_label": "BACK TO  PARTNERSHIPS",
+        "reverse": false,
+        "color": "#353521",
+        "use_dark": true,
         "padding_top": 80,
         "padding_bottom": 80
       }
     },
     "custom_form_rK4H9k": {
       "type": "custom-form",
+      "custom_css": [
+        ".custom_form {border-top: 1px solid #686855;}"
+      ],
       "settings": {
         "heading": "Partnership Requests",
         "description": "Faucibus ornare feugiat posuere scelerisque justo enim nullam. Massa dis quisque sapien egestas vel. Risus adipiscing eu id nunc pulvinar vel. Sodales mi neque morbi urna felis. Id consectetur pulvinar non lorem tempus gravida. Viverra ornare faucibus facilisis egestas ut bibendum risus donec. Convallis proin etiam pellentesque ipsum volutpat tempus. Amet sit nulla nunc tincidunt aliquam.",
         "success_message": "Message sent. I'll get in touch with you soon!",
         "error_message": "Something went wrong. Please try again later.",
         "form_type": "CustomRequest",
-        "use_bg": true,
+        "color": "#343420",
+        "use_dark": true,
+        "btn_style": "button--primary-light",
         "padding_top": 104,
         "padding_bottom": 104
       }
     },
     "related-products": {
       "type": "related-products",
+      "custom_css": [
+
+      ],
       "settings": {
         "product": "the-big-green-scarf",
         "heading": "YOU MAY BE INTERESTED IN",
         "heading_size": "h1",
         "products_to_show": 4,
         "columns_desktop": 4,
-        "color_scheme": "",
+        "color": "#43432a",
+        "use_dark": true,
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
